@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <style>
+        .cube {
+            margin: 10px auto;
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+        .cube:hover {
+            animation: cube-rotate 0.8s linear;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes cube-rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <body>
+        <h1>Hello World 123</h1>
+        <h1>Hello World 123</h1>
+        <h1>Hello World 123</h1>
+        <h1>Hello World 123</h1>
+        <h1>Hello World 123</h1>
+        <div class="cube"></div>
+    </body>
+</html>
