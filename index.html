@@ -3,40 +3,212 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>html初步介紹</title>
     </head>
-
-    <style>
-        .cube {
-            margin: 10px auto;
-            width: 100px;
-            height: 100px;
-            background-color: #000;
-        }
-        .cube:hover {
-            animation: cube-rotate 0.8s linear;
-            animation-fill-mode: both;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes cube-rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
-
     <body>
-        <h1>Hello World 123</h1>
-        <h1>Hello World 123</h1>
-        <h1>Hello World 123</h1>
-        <h1>Hello World 123</h1>
-        <h1>Hello World 123</h1>
-        <h2>No Hello to the World</h2>
-        <div class="">I created something here.</div>
-        <div class="cube"></div>
+        <div style="background-color: red">div全框容器</div>
+        <span style="background-color: #ffe797">span內聯</span>
+        <span>span內聯</span><span>span內聯</span>
+
+        <div class="product-card">
+            <img src="https://picsum.photos/200/300" alt="商品圖片" />
+            <div class="product-info">
+                <div>商品名稱: 123</div>
+                <div>商品描述: AAAA</div>
+                <div>商品價格: 1000元</div>
+            </div>
+            <span>冬季</span>
+            <span>下殺</span>
+            <span>男裝</span>
+        </div>
+
+        <hr />
+
+        <!-- h1原則上一個頁面僅會出現一次 (權重關係)，跟SEO有關 -->
+        <h1>Hello World</h1>
+        <h2>Hello World</h2>
+        <h3>Hello World</h3>
+        <h4>Hello World</h4>
+        <h5>Hello World</h5>
+        <h6>Hello World</h6>
+
+        <hr />
+
+        <!-- html重視語意及結構的呈現，標籤要用對，注意排列結構。
+        針對樣式可以再用css調整，而正確的使用語意及結構，讓建立的樣式能全部套用。 -->
+        <h1>這是我的標題</h1>
+        <div style="margin-bottom: 50px">
+            一段內容，這個<span
+                style="font-size: 40px; font-weight: bold; color: red"
+                >很重要</span
+            >，其他的都不是很重要
+        </div>
+
+        <!-- 段落不可作為高度使用 -->
+        <p>段落1</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>段落2</p>
+
+        <!-- p不可包div -->
+        <!-- <p>
+            <div>xxxxxx</div>
+        </p> -->
+
+        <!-- 合理結構 -->
+        <div class="article">
+            <h1>標題</h1>
+            <div class="content">
+                <p>段落1</p>
+                <p>段落2</p>
+                <p>段落3</p>
+                <p>段落4</p>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- 強調 em/strong-->
+        <div>
+            <!-- 強調很重要，em預設為斜體 -->
+            一段內容<em>很重要</em>，其他的都不是很重要
+        </div>
+        <div>
+            <!-- 強調很重要，strong預設為粗體 -->
+            一段內容<strong>很重要</strong>，其他的都不是很重要
+        </div>
+        <hr />
+
+        <!-- 換行 br -->
+        <p>
+            中部辦公室: [地址]
+            <br />
+            <!-- 使用錯誤，晃行不可用於顯示高度距離 -->
+            <br />
+            <br />
+            <br />
+            北部辦公室: [地址]
+            <br />
+            南部辦公室: [地址]
+        </p>
+        <hr />
+
+        <!-- 水平線 hr -->
+        <h1>第一章</h1>
+        <p>第一章內容</p>
+        <hr />
+        <h1>第二章</h1>
+        <p>第二章內容</p>
+        <hr />
+        <h1>第三章</h1>
+        <p>第三章內容</p>
+        <hr />
+
+        <!-- 無序列表 ul + li -->
+        <ul>
+            <li>項目1</li>
+            <li>項目2</li>
+            <li>項目3</li>
+        </ul>
+
+        <ul style="list-style-type: none">
+            <li>
+                <a href="https://www.google.com">項目1</a>
+            </li>
+            <li>
+                <a href="https://www.google.com">項目2</a>
+            </li>
+            <li>
+                <a href="https://www.google.com">項目3</a>
+            </li>
+        </ul>
+
+        <!-- 有序列表 ol + li -->
+        <ol>
+            <li>項目1</li>
+            <li>項目2</li>
+            <li>項目3</li>
+        </ol>
+
+        <h3>XX食譜</h3>
+        <ol>
+            <li>步驟1</li>
+            <li>步驟2</li>
+            <li>步驟3</li>
+        </ol>
+
+        <h3>XX食譜</h3>
+        <ol type="a">
+            <li>步驟1</li>
+            <li>步驟2</li>
+            <li>步驟3</li>
+        </ol>
+
+        <h3>XX食譜</h3>
+        <ol type="A">
+            <li>步驟1</li>
+            <li>步驟2</li>
+            <li>步驟3</li>
+        </ol>
+
+        <h3>XX食譜</h3>
+        <ol type="A" start="3">
+            <li>步驟1</li>
+            <li>步驟2</li>
+            <li>步驟3</li>
+        </ol>
+
+        <!-- 定義列表 dl + dt + dd  -->
+        <dl>
+            <dt>定義1</dt>
+            <dd>定義1的內容</dd>
+            <dt>定義2</dt>
+            <!-- 定義的內容可以多項 -->
+            <dd>定義2的內容</dd>
+            <dd>定義2的內容</dd>
+            <dd>定義2的內容</dd>
+            <dt>網路協定</dt>
+            <dd>HTTP</dd>
+            <dd>HTTPS</dd>
+            <dd>FTP</dd>
+            <dd>
+                <p>項目1</p>
+                <p>項目2</p>
+                <p>項目3</p>
+            </dd>
+        </dl>
+
+        <!-- 超連結 a -->
+        <!-- href為必填項目，可以填"#"(跳回頁面頂部) -->
+        <!-- target為選填項目，可以填"_blank"、"_self"(預設)、"_parent"、"_top" -->
+        <!-- 跟網頁沒有直接關連，可以用_blank，跟網頁有上下文/流程關聯，可以用_self。
+        跳新分頁可能會被瀏覽器擋掉，但跳轉的網頁跟遠本網頁域名有關，比較不會被擋。-->
+        <a href="https://www.google.com" target="_blank">跳新分頁</a>
+        <a href="https://www.google.com" target="_self">直接跳轉</a>
+        <!-- <a href="https://www.google.com" target="_parent">跳到父層</a>
+        <a href="https://www.google.com" target="_top">跳到最上層</a> -->
+
+        <!-- 跟a標籤有關的屬性有href、target、download、rel -->
+        <!-- download為選填項目，可以填"true"、"false"(預設) -->
+        <!-- rel為選填項目，可以填"noopener"、"noreferrer"、"prev"、"next"、"author"、"external"、"help"、"search"、"tag" -->
     </body>
 </html>
+
+<!--
+    副檔名是給人看的，所以檔名後面的.html，這告訴人類這是HTML檔案
+    電腦看的是文件最上層的<!DOCTYPE html>，這告訴電腦這是HTML5的檔案
+    <html lang="en"> 告訴電腦這是英文版的HTML檔案，沒事不要改
+-->
+
+<!-- 
+    <head> 是HTML的標頭，裡面放的是HTML的設定。這是給電腦看的，人類看不到
+    <meta charset="UTF-8"> 告訴電腦這是HTML的編碼，UTF-8是編碼的格式
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 告訴電腦這是HTML的視窗，寬度是設備的寬度，初始縮放是1倍
+    <title>Document</title> 是HTML的標題，Document是標題，這可以更改為任何你想要的名字。會呈現在"瀏覽器標籤"、"網站標籤"、"搜尋結果"
+ -->
+
+<!-- 
+    <body> 是HTML的內容，裡面放的是HTML的內容。這是給人看的，電腦看不到
+    <body>由許多標籤(tag)組成，可視為HTML的元素、結構。
+
+ -->

@@ -1,5 +1,9 @@
 {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.tabWidth": 4
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.tabWidth": 4
 }
+
+//越接近專案的設定檔(JSON)，等級越高
+//越接近使用者的設定檔(JSON)，等級越低
+// 等級: workspace settings > default settings > user settings
