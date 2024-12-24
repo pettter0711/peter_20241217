@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>表單</title>
+        <style>
+            body {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>表單建立練習</h1>
+        <hr />
+        <!-- action: 表單傳送的位置(網址) -->
+        <!-- method: 表單傳送的方式(GET/POST) -->
+        <!-- GET 類似平信，傳輸成本低，但洩漏風險大，送出後的資料會顯示在網址列 -->
+        <!-- POST 類似掛號，傳輸成本高，但洩漏風險小，隱私性較高 ，適合用於機密資料/上傳檔案，送出後的資料不會顯示在網址列-->
+        <!-- enctype: 表單傳送的處理方式(編碼方式)，包含application/x-www-form-urlencoded, multipart/form-data, text/plain -->
+        <!-- application/x-www-form-urlencoded => 預設值，透過URL(網址)傳送 -->
+        <!-- multipart/form-data => 透過表單(二進制)傳送，適合用於上傳檔案 -->
+        <!-- text/plain => 透過純文字傳送 -->
+        <form
+            action="https://book.niceinfos.com/api/form/"
+            method="post"
+            enctype="application/x-www-form-urlencoded"
+        >
+            <!-- label: 標籤，用於顯示表單欄位名稱 -->
+            <!-- for與input的id相同，當點擊label時，會自動連結到input -->
+            <!-- label不一定要在form內，也不需要在input附近 -->
+            <label for="account">帳號</label>
+            <!-- name 表單送出後的欄位名稱, 用於後端接收資料 -->
+            <!-- value 表單送出後的欄位值, 用於後端接收資料 -->
+            <!-- 送出格式: account=123 -->
+            <input type="text" name="account" id="account" value="admin" />
+            <label for="password">密碼</label>
+            <!-- 密碼欄位, 輸入的內容不會直接顯示在網頁上 -->
+            <!-- 但前端的input屬於明碼傳送(可調整type讓他密碼顯現)，一般搭配 POST 使用 -->
+            <input
+                type="password"
+                name="password"
+                id="password"
+                value="123456"
+            />
+            <label for="submit">點我送出</label>
+            <input type="submit" value="送出" id="submit" />
+        </form>
+        <!-- live server的網站是http，非https，所以無法使用post -->
+        <!-- https會將傳輸資料加入驗證機制，讓第三人無法輕易取得 -->
+        <!-- post傳送會將資料作封包傳送，不會顯示網址上 -->
+        <!-- 接收資料的後端，如有將接收功能做特定處理，該筆資料便無法在第三方做存取 -->
+    </body>
+</html>

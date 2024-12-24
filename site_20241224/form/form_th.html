@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form</title>
+        <style>
+            body {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Form</h1>
+        <hr />
+
+        <!-- action 表單送出後的處理位置 -->
+        <!-- method 表單送出後的處理方式, get 是透過網址列傳送, post 是透過表單傳送 -->
+        <!-- get 平信 -->
+        <!-- post 掛號 -->
+        <!-- enctype 表單送出後的處理方式, application/x-www-form-urlencoded 是透過網址列傳送, multipart/form-data 是透過表單傳送 -->
+        <form
+            action="./form_th.html"
+            method="get"
+            enctype="application/x-www-form-urlencoded"
+        >
+            <div>
+                <!-- label 標籤, 用於顯示表單欄位名稱 -->
+                <!-- for 與 input 的 id 相同, 用於連結表單欄位名稱與標籤 -->
+                <!-- 不一定要在 form內，也不需要再 input 附近 -->
+                <label for="account">帳號:</label>
+                <!-- name 表單送出後的欄位名稱, 用於後端接收資料 -->
+                <!-- value 表單送出後的欄位值, 用於後端接收資料 -->
+                <!-- 送出格式: account=123 -->
+                <input type="text" name="account" value="123" id="account" />
+            </div>
+            <div>
+                密碼:
+                <!-- 密碼欄位, 輸入的內容不會顯示在網頁上 -->
+                <!-- 明碼傳送，一般搭配 POST 使用 -->
+                <input type="password" name="password" value="456" />
+            </div>
+            <div><button type="submit">Submit</button></div>
+        </form>
+
+        <div style="height: 1000px; background-color: #ccc"></div>
+        <div>
+            <label for="account">點我輸入帳號</label>
+        </div>
+    </body>
+</html>

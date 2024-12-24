@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>表格</title>
+        <style>
+            body {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            th {
+                border: 1px solid #000;
+                padding: 10px;
+                background-color: #3b8ffc;
+                color: #fff;
+            }
+
+            td {
+                border: 1px solid #000;
+                padding: 10px;
+                /* text-align: center; */
+            }
+
+            td:first-child {
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>表格建立練習</h1>
+        <hr />
+        <!-- 表格，用於多筆傭有同樣欄位的資料呈現 -->
+        <!-- 一種資料庫的概念 -->
+        <!-- 注意結構 thead, tbody, tr, th, td -->
+        <div class="table">
+            <table>
+                <!-- thead: 表頭，描述[資料集]擁有的欄位 -->
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>姓名</th>
+                        <th>年齡</th>
+                        <th>性別</th>
+                    </tr>
+                </thead>
+                <!-- tbody: 表身，資料的呈現 -->
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>華仔</td>
+                        <td>28</td>
+                        <td>男</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>小美</td>
+                        <td>22</td>
+                        <td>女</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

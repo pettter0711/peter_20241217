@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>圖片</title>
+    </head>
+    <body>
+        <h3>圖片嵌入html練習</h3>
+        <div class="image-item">
+            <!-- alt 圖片描述，如果圖片無法顯示，會顯示 alt 的文字 -->
+            <img
+                src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+                alt="Google Logo"
+            />
+
+            <!-- . 代表當前位置 -->
+            <!-- ./ 代表當前目錄 -->
+            <!-- / 代表目錄 -->
+            <!-- ../ 代表上一層目錄 -->
+            <p>路徑: ../assets/images/cat.jpg</p>
+            <img src="./assets/images/cat.jpg" alt="一隻貓" />
+
+            <h3>錯誤路徑</h3>
+            <p>注意html檔案及圖片檔案的所在資料夾位置，然後建立正確路徑</p>
+            <img src="./assets/images/cat.jpg" alt="一隻貓" />
+
+            <!-- ../ 跳到上一層目錄 -->
+            <!-- ../assets/js/fetch_cat.js -> /assets/js/fetch_cat.js -->
+            <h3>正確路徑</h3>
+            <p>路徑: ../assets/images/cat.jpg</p>
+            <img src="../assets/images/cat.jpg" alt="一隻貓" />
+        </div>
+        <hr />
+        <h3>音訊嵌入html練習</h3>
+        <div class="audio-item">
+            <!-- scr: 音訊來源路徑 -->
+            <!-- controls: 顯示播放控制器 -->
+            <!-- loop: 循環播放 -->
+            <!-- preload: 預先載入音訊，預設為 auto，可以設為 none 或 metadata，功能類似串流 -->
+            <!-- autoplay: 自動播放，需搭配靜音"muted" (此為瀏覽器預設保護機制，避免惡性音樂或軟體侵入) -->
+            <!-- muted: 靜音 -->
+            <!-- type: 音訊格式，可以是mp3、ogg、wav -->
+            <audio controls loop preload="auto" autoplay muted>
+                <source src="../assets/resource/music.mp3" type="audio/mp3" />
+            </audio>
+        </div>
+        <hr />
+        <h3>影片嵌入html練習</h3>
+        <div class="video-item">
+            <video controls loop preload="auto" autoplay muted>
+                <source src="../assets/resource/video.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <hr />
+        <h3>外部嵌入</h3>
+        <div class="external-web">
+            <!-- 嵌入外部網站 -->
+            <!-- CSP 限制https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+            <p>1. 外部網站</p>
+            <iframe
+                src="https://www.google.com"
+                width="600"
+                height="400"
+                frameborder="0"
+            ></iframe>
+        </div>
+        <div class="google-map">
+            <!-- 可調整 iframe的width及height，讓他符合畫面需求 -->
+            <p>2. google 地圖</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.135993230144!2d120.68797702841111!3d24.14429411926492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d6b9b1624e5%3A0x104e57f0c891d03b!2z6Ie65Lit5YWs5ZyS!5e0!3m2!1szh-TW!2stw!4v1735041714110!5m2!1szh-TW!2stw"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+        <div class="youtube">
+            <!-- 影片如果設定不可嵌入，會顯示警告無法撥放。 -->
+            <p>3. youtube</p>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/ZlayI0WKX40?si=x9jqpy3ohjrKelje"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </body>
+</html>
