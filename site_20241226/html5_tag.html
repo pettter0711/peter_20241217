@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML5語意化</title>
+        <style>
+            body {
+                max-width: 1000px;
+                margin: 0 auto;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML5語意化</h1>
+        <div>header / nav / main / article / section / footer</div>
+        <!-- 語意化標籤不影響外觀呈現，但可以讓瀏覽器和搜尋引擎更容易理解網頁結構 -->
+        <hr />
+        <!-- header 用於定義網頁或區段的頁首，一個頁面可以有多個header -->
+        <!-- 未語意化 -->
+        <div class="header">
+            <div>logo</div>
+            <div>nav</div>
+            <div>search</div>
+        </div>
+        <br />
+        <!-- 語意化 -->
+        <header class="header">
+            <div>logo</div>
+            <div>nav</div>
+            <div>search</div>
+        </header>
+        <hr />
+        <!-- nav 導航列 -->
+        <!-- 未語意化 -->
+        <div class="nav">
+            <ul>
+                <li>介紹</li>
+                <li>評價</li>
+                <li>交通</li>
+            </ul>
+        </div>
+        <!-- 語意化 -->
+        <nav class="nav">
+            <ul>
+                <li>介紹</li>
+                <li>評價</li>
+                <li>交通</li>
+            </ul>
+        </nav>
+        <hr />
+        <!-- main 主內容，一個頁面僅能有一個main -->
+        <!-- 未語意化 -->
+        <div class="main">
+            <h1>主內容</h1>
+        </div>
+        <!-- 語意化 -->
+        <main class="main">
+            <h1>主內容</h1>
+        </main>
+        <hr />
+        <!-- article 用於定義獨立的內容，一個頁面可以有多個article -->
+        <!-- section 劃分主題相關的內容區塊，一個頁面可以有多個section -->
+        <!-- section 通常用在article裡，但也可以用在其他地方 -->
+        <!-- 未語意化 -->
+        <div class="article">
+            <h2>技巧分享1</h2>
+            <div class="tech-1">
+                <h3>技巧分享1-1</h3>
+                <div>關於技巧分享的知識blablabla</div>
+            </div>
+            <div class="tech-1">
+                <h3>技巧分享1-2</h3>
+                <div>關於技巧分享的知識blablabla</div>
+            </div>
+        </div>
+        <br />
+        <!-- 語意化 -->
+        <article class="article">
+            <h2>技巧分享2</h2>
+            <section class="tech-2">
+                <h3>技巧分享2-1</h3>
+                <div>關於技巧分享的知識blablabla</div>
+            </section>
+            <section class="tech-2">
+                <h3>技巧分享2-2</h3>
+                <div>關於技巧分享的知識blablabla</div>
+            </section>
+        </article>
+        <hr />
+        <!-- footer 用於定義網頁或區段的頁尾，一個頁面可以有多個footer -->
+        <!-- 未語意化 -->
+        <div class="footer">
+            <div>footer</div>
+        </div>
+        <!-- 語意化 -->
+        <footer class="footer">
+            <div>footer</div>
+        </footer>
+    </body>
+</html>

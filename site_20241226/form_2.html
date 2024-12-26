@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>表單</title>
+        <style>
+            body {
+                max-width: 1000px;
+                margin: 0 auto;
+                font-size: 16px;
+            }
+            form > div {
+                margin-bottom: 10px;
+            }
+
+            input {
+                padding: 5px 10px;
+                border: 1px solid #000;
+                border-radius: 5px;
+            }
+
+            textarea.non-resize {
+                resize: none;
+                width: 100%;
+                height: 100px;
+            }
+
+            .btn-group button {
+                background-color: var(--c);
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 1rem;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 4px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
+            }
+
+            .btn-group button:hover {
+                background-color: #1c5cb1;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                transform: translateY(-2px);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>20241226 input屬性</h1>
+        <hr />
+        <h2>button 按鈕</h2>
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <div class="">
+                <label for="account">帳號</label>
+                <input type="text" name="account" id="account" value="" />
+                <label for="password">密碼</label>
+                <input type="password" name="password" id="password" value="" />
+            </div>
+            <div class="btn-group">
+                <!-- 按鈕,每個瀏覽器預設樣式不同 -->
+                <p>在form裡面的按鈕的type預設為submit</p>
+                <!-- 送出按鈕，為button的預設值，會將form裡面的input的值送出 -->
+                <button type="submit" style="--c: #4caf50">送出</button>
+                <!-- 重設按鈕，會將form裡面的input的值重設為預設值 -->
+                <button type="reset" style="--c: #f44336">重設</button>
+                <!-- 按鈕,無任何功能, 通常搭配 js 使用 -->
+                <button
+                    type="button"
+                    onclick="alert('按鈕')"
+                    style="--c: #9e9e9e"
+                >
+                    按鈕
+                </button>
+            </div>
+        </form>
+        <div class="btn-group">
+            <p>在form外面的按鈕，是單純的按鈕，無任何表單功能</p>
+            <button type="submit" style="--c: #4caf50">送出</button>
+            <button type="reset" style="--c: #f44336">重設</button>
+            <button type="button" style="--c: #9e9e9e">按鈕</button>
+        </div>
+        <hr />
+        <h2>textarea 文字輸入區</h2>
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <div class="">
+                <label for="comment">留言</label>
+                <!-- cols 行數,rows 列數, 可使用 css 調整 -->
+                <!-- 預設樣式每個瀏覽器不同 -->
+                <!-- textarea與input:text相似，但可以多行輸入 -->
+                <!-- 屬性可用 placeholder, readonly, disabled -->
+                <textarea
+                    name="comment"
+                    id="comment"
+                    cols="60"
+                    rows="10"
+                    placeholder="請輸入留言"
+                    class="non-resize"
+                >
+123456</textarea
+                >
+            </div>
+            <div class="">
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        <hr />
+        <h2>select 下拉選單</h2>
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <div class="">
+                <!-- 預設樣式每個瀏覽器不同 -->
+                <!-- name 表單送出時的參數名稱 -->
+                <label for="city">城市(單選)</label>
+                <select name="city" id="city" style="width: 100%">
+                    <option value="" disabled selected>請選擇</option>
+                    <option value="taipei">台北</option>
+                    <option value="new-taipei">新北</option>
+                    <option value="taoyuan">桃園</option>
+                    <option value="taichung">台中</option>
+                    <option value="kaohsiung">高雄</option>
+                    <!-- 值為中文時，會傳送中文，但可能會影響後端資料庫的處理 -->
+                    <option value="我是中文">我是中文</option>
+                    <!-- 值為空值時，會傳送空白 -->
+                    <option value=" ">其他</option>
+                </select>
+            </div>
+            <div class="">
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        <hr />
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <div class="">
+                <label for="city">城市(多選)</label>
+                <!-- multiple: 多選，選取時須按住shift/ctrl/cmd鍵 -->
+                <!-- 要傳送多個值,name要使用陣列(Array),表示方式為 [] -->
+                <select name="city[]" id="city" style="width: 100%" multiple>
+                    <option value="" disabled selected>請選擇</option>
+                    <option value="taipei">台北</option>
+                    <option value="new-taipei">新北</option>
+                    <option value="taoyuan">桃園</option>
+                    <option value="taichung">台中</option>
+                    <option value="kaohsiung">高雄</option>
+                    <!-- 值為中文時，會傳送中文，但可能會影響後端資料庫的處理 -->
+                    <option value="我是中文">我是中文</option>
+                    <!-- 值為空值時，會傳送空白 -->
+                    <option value=" ">其他</option>
+                </select>
+            </div>
+            <div class="">
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        <hr />
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <div class="">
+                <label for="people">人數</label>
+                <select name="people" id="people">
+                    <!-- 沒有設定value時，會傳送option的文字，但建議不要偷懶，還是要設定value -->
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                </select>
+            </div>
+            <div class="">
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        <hr />
+        <h2>input: checkbox</h2>
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <!-- 多選,預設樣式每個瀏覽器不同 -->
+            <!-- value 送出時的參數名稱,不顯示在UI -->
+            <!-- name 表單送出時的參數名稱,也是checkbox的群組名稱 -->
+            <!-- checked 預設選中 -->
+            <!-- 無效的屬性有 placeholder, readonly -->
+            <!-- 要傳送多個值時，要使用"陣列"，在name後面加上[] -->
+            <!-- 即使僅有一個checkbox，最好也用陣列傳送，以保證資料型態 (行業默契) -->
+            <!-- 網址中，符號 [ => %5B , 符號 ] => %5D -->
+            <div class="">
+                <input type="checkbox" name="hobby[]" id="eat" value="吃" />
+                <label for="eat">吃</label>
+                <input type="checkbox" name="hobby[]" id="sleep" value="睡" />
+                <label for="sleep">睡</label>
+                <input type="checkbox" name="hobby[]" id="play" value="玩" />
+                <label for="play">玩</label>
+            </div>
+            <div class="">
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        <hr />
+        <h2>input: radio</h2>
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <!-- radio: 單選按鈕，可以選擇一個或多個 -->
+            <!-- name: 表單送出時的參數名稱，也是radio的群組名稱 -->
+            <!-- 多個radio的name相同時，為一個群組，使用者在同一個群組中只能選擇一個radio -->
+            <!-- value: 表單送出時的參數值 -->
+            <!-- disabled: 禁用，無法選擇 -->
+            <!-- checked: 預設選中 -->
+            <!-- 無效的屬性有 placeholder, readonly -->
+            <div class="">
+                <input
+                    type="radio"
+                    name="gender"
+                    id="gender-male"
+                    value="男性"
+                />
+                <label for="gender-male">男性</label>
+                <input
+                    type="radio"
+                    name="gender"
+                    id="gender-female"
+                    value="女性"
+                />
+                <label for="gender-female">女性</label>
+                <input
+                    type="radio"
+                    name="gender"
+                    id="gender-disabled"
+                    value="不能選"
+                    disabled
+                />
+                <label for="gender-disabled">不能選</label>
+                <input
+                    type="radio"
+                    name="gender"
+                    id="gender-checked"
+                    value="預選"
+                    checked
+                />
+                <label for="gender-checked">預選</label>
+            </div>
+            <!-- submit: 送出表單 (送出至submit按鈕所屬的form，資料不會傳送到其他form) -->
+            <div class="">
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        <hr />
+        <h2>input 屬性</h2>
+        <form
+            action="https://book.niceinfos.com/api/form/index.php"
+            method="get"
+        >
+            <!-- name: 表單送出時的參數名稱，會將name的值當作key，value當作value -->
+            <!-- placeholder: 提示文字，輸入時會自動消失 -->
+            <!-- maxlength: 最大輸入字數 -->
+            <!-- minlength: 最小輸入字數 -->
+            <!-- readonly: 唯獨，可以複製，但無法直接修改 (可用開發者工具修改) -->
+            <!-- disabled: 禁用，可以複製，但無法直接修改 (可用開發者工具修改) -->
+            <!-- 前端領域中，給input設立的條件僅是提示，使用者仍可以透過開發者工具修改 -->
+            <div class="">
+                <label for="account">帳號</label>
+                <input
+                    type="text"
+                    name="account"
+                    id="account"
+                    value="aaaaa"
+                    placeholder="請輸入帳號"
+                    maxlength="10"
+                    readonly
+                />
+            </div>
+            <div class="">
+                <label for="password">密碼</label>
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    value=""
+                    placeholder="請輸入密碼"
+                    minlength="6"
+                    maxlength="10"
+                />
+            </div>
+            <div class="">
+                <button type="submit">送出</button>
+            </div>
+        </form>
+        <hr />
+    </body>
+</html>

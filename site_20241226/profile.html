@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resume</title>
+        <style>
+            body {
+                max-width: 1000px;
+                margin: 0 auto;
+                font-size: 16px;
+            }
+
+            section.basic {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1>個人履歷</h1>
+        </header>
+        <main class="main">
+            <h2>基本資料</h2>
+            <section class="basic">
+                <div class="self-photo">
+                    <img src="https://picsum.photos/200/300" alt="個人照片" />
+                </div>
+                <nav class="info">
+                    <ul class="info-list">
+                        <li class="name">
+                            <span>姓名: </span>
+                            <span>張三</span>
+                        </li>
+                        <li class="age">
+                            <span>年齡: </span>
+                            <span>25</span>
+                        </li>
+                        <li class="phone">
+                            <span>電話: </span>
+                            <span>0912345678</span>
+                        </li>
+                        <li class="email">
+                            <span>信箱: </span>
+                            <span>abc@gmail.com</span>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="about">
+                <h2>個人簡介</h2>
+                <p>
+                    我是一位前端工程師，擁有豐富的網站開發經驗。我熱愛學習新技術，並且擅長將理論與實踐相結合。
+                </p>
+            </section>
+            <section class="experience">
+                <h2>工作經驗</h2>
+                <p>
+                    我曾在多家公司擔任前端工程師，負責網站開發和維護。我擅長使用HTML、CSS、JavaScript等技術，並且熟悉React、Vue等前端框架。
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>公司名稱</th>
+                            <th>職位</th>
+                            <th>工作時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>公司1</td>
+                            <td>前端工程師</td>
+                            <td>2019-2020</td>
+                        </tr>
+                        <tr>
+                            <td>公司2</td>
+                            <td>前端工程師</td>
+                            <td>2020-2021</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="skills">
+                <h2>專業技能</h2>
+                <nav>
+                    <ul class="skill-list">
+                        <li>Html</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </nav>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="content">&copy; 2024 張三</div>
+        </footer>
+    </body>
+</html>
