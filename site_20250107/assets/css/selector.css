@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav {
+    list-style-type: none;
+}
+
+/* 後代選擇器 */
+.nav li {
+    background-color: #f5a623;
+}
+
+.nav > li {
+    color: red;
+}
+
+/* 子層選擇器 */
+/* 權重大於後代選擇器 */
+.nav-drop > li {
+    color: #000;
+}
+
+/* 相鄰選擇器 嚴謹 */
+.items .item + .only {
+    color: red;
+}
+
+/* 相鄰選擇器 寬鬆 */
+.items .item ~ .all {
+    background-color: #8f8fe0;
+}

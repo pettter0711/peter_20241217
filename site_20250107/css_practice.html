@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="assets/css/declare.css" />
+    </head>
+    <!-- css的三種宣告方式: 行內樣式宣告、標籤屬性宣告、獨立檔案引入 -->
+    <!-- 行內樣式宣告: 直接宣告在標籤上，優先權最高 -->
+    <!-- 標籤屬性宣告: 在html檔案中body的上面，設立<style>標籤，優先權次高 -->
+    <!-- 獨立檔案引入: 資料中獨立創立css檔案，並在html中用<link>引入，優先權最低 -->
+    <!-- 建議用獨立檔案引入: 方便維護、可重複使用、錯誤率較低 -->
+    <!-- 標籤僅存在於html中，css, js中不會出現標籤 -->
+
+    <style>
+        /* div {
+            color: blue;
+        } */
+
+        .item {
+            color: blue;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div class="" style="color: red; font-size: 20px; font-weight: bold">
+            行內樣式，宣告在標籤屬性內
+        </div>
+        <div class="item">宣告樣式，使用style標籤</div>
+        <div class="outside">使用.css檔案引入</div>
+    </body>
+</html>
