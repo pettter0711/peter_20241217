@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS優先權</title>
+        <link rel="stylesheet" href="assets/css/priority.css" />
+    </head>
+    <body>
+        <header>
+            <h1 class="title">CSS 選擇器優先權</h1>
+        </header>
+        <hr />
+        <main>
+            <section>
+                <div class="">"!important": 最優先</div>
+                <div class="">行內樣式: 1000</div>
+                <div class="">ID選擇器: 100</div>
+                <div class="">類別選擇器、屬性選擇器、偽類: 10</div>
+                <div class="">標籤選擇器、偽元素: 1</div>
+                <div class="">
+                    <b>*在同一個層級比較才有意義，不能父層跟子層比較</b>
+                </div>
+                <div class="">
+                    <b
+                        >*CSS中，後者覆蓋前者。較通用(影響廣)的樣式放前面，較精準(針對性)的樣式放後面。</b
+                    >
+                </div>
+            </section>
+            <hr />
+            <section id="container">
+                <p class="text highlight">這是一段文字</p>
+                <p style="color: #800080">行內選擇器</p>
+                <p class="text">文字</p>
+                <p class="text" id="special">ID選擇器</p>
+            </section>
+        </main>
+    </body>
+</html>

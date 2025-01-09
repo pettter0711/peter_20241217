@@ -1,0 +1,56 @@
+/* 初始化，可獨立為一個css檔案，再引入專案 */
+/* *,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: #8d8d8d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* 預設 */
+.static {
+    position: static;
+}
+
+.relative {
+    position: relative;
+    top: 100px;
+    margin-bottom: 200px;
+}
+
+.absolute {
+    background-color: #003ec5;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    opacity: 0.8;
+}
+
+.p3-css {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: #d43333;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+    top: 50px;
+    left: 250px;
+    background-color: #a8236c;
+    opacity: 0.8;
+}

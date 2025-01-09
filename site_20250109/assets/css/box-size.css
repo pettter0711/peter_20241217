@@ -1,0 +1,48 @@
+html,
+body {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 16px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: #000; */
+    background-color: #cecece;
+}
+
+.box-202 {
+    background-color: #dc94e6;
+}
+
+.box-242 {
+    /* padding "上下左右" */
+    padding: 20px;
+    /* padding 上下 左右 */
+    padding: 20px 20px;
+}
+
+.box-282 {
+    padding: 20px;
+    /* margin "上下左右" */
+    margin: 20px;
+    /* margin 上下 左右 */
+    margin: 20px 20px;
+    background-color: #6693e7;
+}
+
+.box-center {
+    width: 450px;
+    /* margin左右設為"auto"，讓整個區塊在畫面置中 */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.box-mode {
+    /* 將盒子模型改為border計算 */
+    box-sizing: border-box;
+}

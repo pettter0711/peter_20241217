@@ -1,0 +1,30 @@
+html,
+body {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 16px;
+}
+
+p {
+    color: #000;
+}
+/* 1 */
+
+.text {
+    color: #0000ff;
+}
+/* 10 */
+
+#container .text.highlight {
+    color: #008000;
+}
+/* 100 + 10 + 10 = 120 */
+
+#container p {
+    color: #ff0000;
+}
+/* 100 + 1 = 101 */
+
+#special {
+    color: #ffa500 !important;
+}
+/* 最優先 */
