@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex 宣告</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/flex.css" />
+    </head>
+    <body>
+        <div class="container">
+            <section>
+                <h3>排列方式</h3>
+                <div class="" style="margin-bottom: 15px">
+                    <div class="flex-wrap row">
+                        <div class="item">1</div>
+                        <div class="item">2</div>
+                        <div class="item">3</div>
+                    </div>
+                    <div class="flex-wrap row-reverse">
+                        <div class="item">1</div>
+                        <div class="item">2</div>
+                        <div class="item">3</div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="flex-wrap column">
+                        <div class="item">1</div>
+                        <div class="item">2</div>
+                        <div class="item">3</div>
+                    </div>
+                    <div class="flex-wrap column-reverse">
+                        <div class="item">1</div>
+                        <div class="item">2</div>
+                        <div class="item">3</div>
+                    </div>
+                </div>
+            </section>
+            <hr />
+            <section>
+                <h3>對齊方式-水平</h3>
+                <div class="flex-wrap-2 justify-start">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+                <div class="flex-wrap-2 justify-center">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+                <div class="flex-wrap-2 justify-end">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+                <div class="flex-wrap-2 justify-between">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+            </section>
+            <hr />
+            <section>
+                <h3>對齊方式-垂直</h3>
+                <div class="flex-wrap-3 align-start">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+                <div class="flex-wrap-3 align-center">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+                <div class="flex-wrap-3 align-end">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </div>
+            </section>
+            <hr />
+            <section>
+                <h3>不換行</h3>
+                <div class="flex-wrap-4 nowrap">
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem laborum ex eaque saepe maiores, tenetur
+                        temporibus earum possimus deleniti corrupti porro.
+                    </div>
+                    <div class="item" style="width: 100px">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem laborum ex eaque saepe maiores, tenetur
+                        temporibus earum possimus deleniti corrupti porro.
+                    </div>
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem laborum ex eaque saepe maiores, tenetur
+                        temporibus earum possimus deleniti corrupti porro.
+                    </div>
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem laborum ex eaque saepe maiores, tenetur
+                        temporibus earum possimus deleniti corrupti porro.
+                    </div>
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem laborum ex eaque saepe maiores, tenetur
+                        temporibus earum possimus deleniti corrupti porro.
+                    </div>
+                </div>
+            </section>
+            <hr />
+            <section>
+                <h3>換行</h3>
+                <div class="flex-wrap-4 wrap">
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem.
+                    </div>
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem.
+                    </div>
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem.
+                    </div>
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem.
+                    </div>
+                    <div class="item">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iusto quidem.
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,15 +1,54 @@
+/* 如網頁內大部分文字都用同樣的字體，font-family可直接做在body內 */
+html,
+body {
+    font-family: "Noto Sans TC", Arial, Helvetica, sans-serif;
+}
+
 /* 全域變數設定: 建立 root{}，將變數在其中宣告 */
 :root {
-    --popup-size: 500px;
+    --popup-size: 600px;
 }
 
 .popup {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    z-index: 1;
+}
+
+.popup .popup-close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: #fff;
+    color: #ff0000;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.popup .popup-close label {
+    cursor: pointer;
+}
+
+.popup .popup-close.--circle {
+    --close-size: 50px;
+    width: var(--close-size);
+    height: var(--close-size);
+    border-radius: var(--close-size);
+    font-size: 30px;
+    line-height: var(--close-size);
+}
+
+.popup .popup-close:hover {
+    background-color: #ff0000;
     color: #fff;
 }
 
@@ -23,30 +62,70 @@
     /* 計算中心點: 50% - 250px (高500px的一半) */
     top: calc(50% - (var(--popup-size) / 2));
     left: calc(50% - (var(--popup-size) / 2));
+    border-radius: 10px;
     background-color: #fff;
     color: #000;
+}
+/* 如要推開與下方區塊的距離，建議在本區塊做下外距 */
+/* 不建議在被推開的區塊做上外距，以保持結構性及順序 */
+.popup-wrap .popup-title {
+    /* font-family: "Noto Sans TC", Arial, Helvetica, sans-serif; */
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 600;
     text-align: center;
+    letter-spacing: 2px;
 }
 
-.popup-wrap > div {
-    margin-bottom: 10px;
+.popup .popup-content {
+    /* font-family: "Noto Sans TC", Arial, Helvetica, sans-serif; */
+    margin-bottom: 15px;
+    line-height: 26px;
+    text-align: justify;
 }
 
-.popup-wrap > div:last-child {
-    margin-bottom: 0;
+.popup-wrap .popup-fn {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    text-align: center;
+    /* 轉為absolute或fixed後，須設定width: 100% */
+    width: 100%;
 }
 
-.popup-wrap .popup-btn button {
-    padding: 5px 12px;
-    outline: 0;
+/* .button避免使用固定寬高，內容容易破版，直接用內距 */
+.popup-btn {
+    font-family: "Noto Sans TC", Arial, Helvetica, sans-serif;
+    padding: 8px 16px;
     border: 0;
     border-radius: 3px;
-    background-color: #2d2db9;
-    color: #fff;
+    background-color: #dadada;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     transition: 0.2s background-color ease-in-out;
 }
 
-.popup-wrap .popup-btn button:hover {
-    background-color: #1c1c80;
+.popup-btn.--primary {
+    background-color: #3434ff;
+    color: #fff;
+}
+
+.popup-btn.--danger {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.wrap {
+    text-align: center;
+}
+.wrap .title {
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#popup-switch:checked ~ .popup {
+    display: block;
 }

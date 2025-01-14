@@ -1,0 +1,51 @@
+body {
+    font-size: 16px;
+    background-color: #f5f5f5;
+}
+
+.font-tc {
+    font-family: "Noto Sans TC", serif;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.top-menu-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-menu-contact > li > a {
+    display: block;
+    position: relative;
+}
+
+.top-menu-contact > li > a::after {
+    position: absolute;
+    content: "|";
+    right: -10px;
+}
+
+.top-menu-contact > li:last-child > a::after {
+    content: "";
+}
+
+.bottom-menu {
+    height: 80px;
+    background-color: #fff;
+}
+
+.bottom-menu .header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}

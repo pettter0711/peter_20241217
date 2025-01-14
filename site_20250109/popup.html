@@ -3,26 +3,56 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
         <title>POPUP</title>
         <link rel="stylesheet" href="../assets/css/reset.css" />
         <link rel="stylesheet" href="assets/css/popup.css" />
+        <!-- 絕對路徑: ../assets/css/reset.css -->
+        <!-- 相對路徑: assets/css/reset.css -->
     </head>
     <body>
+        <!-- 關閉popup的互動效果: checkbox + label的應用 -->
+        <input type="checkbox" name="" id="popup-switch" hidden />
         <div class="popup">
-            <div class="popup-close">&times;</div>
+            <div class="popup-close --circle">
+                <label for="popup-switch">&times;</label>
+            </div>
             <div class="popup-wrap">
                 <div class="popup-title">
-                    <h2>POPUP</h2>
+                    <h2>活動公告</h2>
                 </div>
                 <div class="popup-content">
+                    <p>Apple 即將推出全新智慧手機 iPhone 16 系列！</p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ad sequi voluptates delectus laborum.
+                        搭載最新 A18 仿生晶片，運算效能提升 40%，
+                        並配備全新升級的 48MP 主鏡頭系統，支援 8K
+                        影片錄製。嶄新的 Dynamic Island 2.0
+                        帶來更直覺的操作體驗，結合最新 iOS 18
+                        系統，為您打造前所未有的智慧手機使用體驗。
+                    </p>
+                    <p>
+                        限時預購享優惠價格，即日起至 2025/2/28
+                        止，智慧手機愛好者千萬不要錯過！
                     </p>
                 </div>
-                <div class="popup-btn">
-                    <button>立即領取</button>
+                <div class="popup-fn">
+                    <button class="popup-btn --primary">立即領取</button>
+                    <button class="popup-btn --danger">我要更多</button>
+                    <label for="popup-switch" class="popup-btn">下次再說</label>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="wrap">
+                <h1 class="title">POPUP 提示</h1>
+                <label for="popup-switch" class="popup-btn --primary"
+                    >開啟彈出視窗</label
+                >
             </div>
         </div>
     </body>
