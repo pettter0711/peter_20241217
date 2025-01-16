@@ -3,11 +3,15 @@ body {
     background-color: #f5f5f5;
 }
 
+:root {
+    --header-type: 128px;
+}
+
 .font-tc {
     font-family: "Noto Sans TC", serif;
 }
 
-.top-menu {
+.top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,35 +21,241 @@ body {
     border-bottom: 1px solid #c5c5c5;
 }
 
-.top-menu-contact {
+.top-contact {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.top-menu-contact > li > a {
+.top-contact > li > a {
     display: block;
     position: relative;
 }
 
-.top-menu-contact > li > a::after {
+.top-contact > li > a::after {
     position: absolute;
     content: "|";
     right: -10px;
 }
 
-.top-menu-contact > li:last-child > a::after {
+.top-contact > li:last-child > a::after {
     content: "";
 }
 
-.bottom-menu {
+.menu {
     height: 80px;
-    background-color: #fff;
+    background-color: #f5f5f5;
 }
 
-.bottom-menu .header-wrap {
+.menu .header-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
     height: 100%;
+}
+
+.menu .header-wrap > div {
+    flex: 1;
+}
+
+/* flex與width不會互相衝突，所以要分開設定 */
+.menu .header-wrap .header-logo {
+    flex: unset;
+    width: 150px;
+}
+
+.menu .header-logo > a {
+    display: block;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu .header-wrap .header-search {
+    flex: unset;
+    width: 80px;
+    text-align: center;
+}
+
+.menu .header-search img {
+    max-width: 45%;
+}
+
+.menu .header-menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #202020;
+}
+
+.menu .header-menu-list > li {
+    position: relative;
+}
+
+.menu .header-menu-list .header-menu-sub-list {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.menu .header-menu-list .header-menu-sub-list::after {
+    position: absolute;
+    content: "";
+    top: 1px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon_right.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+}
+
+.menu .header-menu-list > li::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 100%;
+    height: 2px;
+    bottom: -5px;
+    background-color: #ff5050;
+    transition: 0.3s ease-in-out;
+}
+
+.menu .header-menu-list > li:hover::before {
+    right: 6px;
+}
+
+.menu .header-menu-list > li:first-child:hover::before {
+    right: 0;
+}
+
+.menu .header-menu-list .sub-list-wrap {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.menu .header-menu-list > li:hover .sub-list-wrap {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu .header-menu-sub {
+    /* position: absolute;
+    top: 100%;
+    left: 0; */
+    padding: 15px;
+    min-width: 150px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.menu .header-menu-sub > li {
+    padding: 8px 0;
+    transition: 0.3s ease-in-out;
+}
+
+.menu .header-menu-sub > li:hover {
+    color: #ff5050;
+}
+
+.menu .header-search .search-trigger-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu .header-search .search-close {
+    display: none;
+}
+
+#search-trigger {
+    display: none;
+}
+
+#search-trigger:checked ~ .header-search .search-trigger-label > .search-open {
+    display: none;
+}
+#search-trigger:checked ~ .header-search .search-trigger-label > .search-close {
+    display: inline;
+}
+
+.menu .header-wrap .search-condition-wrap {
+    position: fixed;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - var(--header-type));
+    border-top: 1px solid #c5c5c5;
+    background-color: #fff;
+    transition: 0.3s top ease-in-out;
+}
+
+#search-trigger:checked ~ .search-condition-wrap {
+    top: calc(0px + var(--header-type));
+}
+
+.search-condition-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.search-condition-content .search-condition-close {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.search-condition-content .search-condition-close img {
+    max-width: 60%;
+}
+
+.search-condition-content > input {
+    padding: 0 20px;
+    width: 80%;
+    height: 100%;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.search-condition-content > input::placeholder {
+    color: #3d3d3d;
+}
+
+.search-condition-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3d3d3d;
+}
+
+.mobile-header-menu-icon {
+    display: none;
 }

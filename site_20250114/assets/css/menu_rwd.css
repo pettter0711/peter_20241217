@@ -1,0 +1,37 @@
+/* RWD */
+/* @media screen and () {}*/
+/* screen: 裝置類型，常用:screen, print */
+/* max-width: 低於此數值，就觸發 */
+/* min-width: 高於此數值，就觸發 */
+/* 選擇max-width / min-width其中一種後，就用到底，不然樣式會錯 */
+
+/* 原型 */
+/* @media type and (breakpoint) {} */
+
+/* 
+ * 常用的斷點(breakpoint)
+ * 320px ~ 480px 手機
+ * 480px ~ 768px 平板
+ * 768px ~ 1024px 桌機
+ * 1024px ~ 1200px 桌機
+ * 1200px ~ 1920px 桌機
+ */
+
+@media screen and (max-width: 950px) {
+    .top {
+        display: none;
+    }
+
+    .menu .header-wrap {
+        justify-content: center;
+    }
+
+    .menu .header-menu,
+    .menu .header-search {
+        display: none;
+    }
+
+    .mobile-header-menu-icon {
+        display: block;
+    }
+}

@@ -12,56 +12,170 @@
         <title>選單練習</title>
         <link rel="stylesheet" href="../assets/css/reset.css" />
         <link rel="stylesheet" href="assets/css/menu.css" />
+        <link rel="stylesheet" href="assets/css/menu_rwd.css" />
     </head>
     <body>
-        <header>
-            <div class="container">
-                <div class="top-menu">
-                    <div>
-                        <ul class="top-menu-contact">
-                            <li>
-                                <a href="">(02) 8797 3985</a>
-                            </li>
-                            <li>
-                                <a href="">cardio8@ms46.hinet.net</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="top-menu-contact">
-                            <li>
-                                <a href="">FB</a>
-                            </li>
-                            <li>
-                                <a href="">YOUTUBE</a>
-                            </li>
-                            <li>
-                                <a href="">IG</a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="container">
+            <div class="top">
+                <div>
+                    <ul class="top-contact">
+                        <li>
+                            <a href="">(02) 8797 3985</a>
+                        </li>
+                        <li>
+                            <a href="">cardio8@ms46.hinet.net</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="top-contact">
+                        <li>
+                            <a href="">FB</a>
+                        </li>
+                        <li>
+                            <a href="">YOUTUBE</a>
+                        </li>
+                        <li>
+                            <a href="">IG</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="bottom-menu">
+        </div>
+        <header>
+            <div class="menu">
                 <div class="container">
                     <div class="header-wrap">
-                        <div class="logo">
-                            <a href=""> content </a>
+                        <div class="mobile-header-menu-icon">
+                            <label for="search-trigger">
+                                <img
+                                    src="assets/images/icon_menu.png"
+                                    alt="menu"
+                                />
+                            </label>
                         </div>
-                        <div class="main-menu">
-                            <ul>
-                                <li><a href="">content</a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
+                        <div class="header-logo">
+                            <a href="#">
+                                <img
+                                    src="assets/images/cardio_logo.svg"
+                                    alt="header-logo"
+                                />
+                            </a>
+                        </div>
+                        <div class="header-menu">
+                            <ul class="header-menu-list font-tc">
+                                <li>
+                                    <a href="">關於CARDIO</a>
+                                </li>
+                                <li class="header-menu-sub-list">
+                                    <a href="#">產品資訊</a>
+                                    <div class="sub-list-wrap">
+                                        <ul class="header-menu-sub">
+                                            <li><a href=""></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-sub-list">
+                                    <a href="#">最新消息</a>
+                                    <div class="sub-list-wrap">
+                                        <ul class="header-menu-sub">
+                                            <li><a href="">企業新訊</a></li>
+                                            <li><a href="">產品新訊</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-sub-list">
+                                    <a href="#">車用百科</a>
+                                    <div class="sub-list-wrap">
+                                        <ul class="header-menu-sub">
+                                            <li>
+                                                <a href=""
+                                                    >車用安卓機/影音主機</a
+                                                >
+                                            </li>
+                                            <li><a href="">車用智能盒</a></li>
+                                            <li><a href="">行車安全系統</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-sub-list">
+                                    <a href="#">影音專區</a>
+                                    <div class="sub-list-wrap">
+                                        <ul class="header-menu-sub">
+                                            <li><a href=""></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-sub-list">
+                                    <a href="#">常見問題</a>
+                                    <div class="sub-list-wrap">
+                                        <ul class="header-menu-sub">
+                                            <li><a href=""></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-sub-list">
+                                    <a href="#">經銷據點</a>
+                                    <div class="sub-list-wrap">
+                                        <ul class="header-menu-sub">
+                                            <li><a href=""></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu-sub-list">
+                                    <a href="#">聯絡我們</a>
+                                    <div class="sub-list-wrap">
+                                        <ul class="header-menu-sub">
+                                            <li><a href=""></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
-                        <div class="search">
-                            <label for="">content</label>
+                        <input
+                            type="checkbox"
+                            name="search"
+                            id="search-trigger"
+                        />
+                        <div class="header-search">
+                            <label
+                                for="search-trigger"
+                                class="search-trigger-label"
+                            >
+                                <img
+                                    class="search-open"
+                                    src="assets/images/icon_search.png"
+                                    alt="search"
+                                />
+                                <img
+                                    class="search-close"
+                                    src="assets/images/icon_close.png"
+                                    alt="close"
+                                />
+                            </label>
+                        </div>
+                        <div class="search-condition-wrap font-tc">
+                            <div class="search-condition-content">
+                                <input
+                                    type="text"
+                                    name="search"
+                                    value=""
+                                    placeholder="搜尋產品"
+                                />
+                                <label
+                                    for="search-trigger"
+                                    class="search-condition-close"
+                                >
+                                    <img
+                                        class="search-close"
+                                        src="assets/images/icon_close.png"
+                                        alt="close"
+                                    />
+                                </label>
+                            </div>
+                            <div class="search-condition-description">
+                                請輸入您要找的產品名稱...
+                            </div>
                         </div>
                     </div>
                 </div>
