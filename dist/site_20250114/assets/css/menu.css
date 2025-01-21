@@ -53,6 +53,7 @@ body {
     justify-content: space-between;
     gap: 20px;
     height: 100%;
+    position: relative;
 }
 
 .menu .header-wrap > div {
@@ -85,7 +86,7 @@ img {
     max-width: 45%;
 }
 
-.menu .header-menu-list {
+.header-menu-list {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,17 +96,17 @@ img {
     color: #202020;
 }
 
-.menu .header-menu-list > li {
+.header-menu-list > li {
     position: relative;
 }
 
-.menu .header-menu-list .header-menu-sub-list {
+.header-menu-list .header-menu-sub-list {
     display: flex;
     align-items: center;
     padding-right: 10px;
 }
 
-.menu .header-menu-list .header-menu-sub-list::after {
+.header-menu-list .header-menu-sub-list::after {
     position: absolute;
     content: "";
     top: 1px;
@@ -119,7 +120,7 @@ img {
     transform: rotate(90deg);
 }
 
-.menu .header-menu-list > li::before {
+.header-menu-list > li::before {
     position: absolute;
     content: "";
     left: 0;
@@ -130,15 +131,15 @@ img {
     transition: 0.3s ease-in-out;
 }
 
-.menu .header-menu-list > li:hover::before {
+.header-menu-list > li:hover::before {
     right: 6px;
 }
 
-.menu .header-menu-list > li:first-child:hover::before {
+.header-menu-list > li:first-child:hover::before {
     right: 0;
 }
 
-.menu .header-menu-list .sub-list-wrap {
+.header-menu-list .sub-list-wrap {
     position: absolute;
     top: 100%;
     left: 0;
@@ -148,12 +149,12 @@ img {
     transition: 0.3s ease-in-out;
 }
 
-.menu .header-menu-list > li:hover .sub-list-wrap {
+.header-menu-list > li:hover .sub-list-wrap {
     opacity: 1;
     visibility: visible;
 }
 
-.menu .header-menu-sub {
+.header-menu-sub {
     /* position: absolute;
     top: 100%;
     left: 0; */
@@ -164,12 +165,12 @@ img {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
-.menu .header-menu-sub > li {
+.header-menu-sub > li {
     padding: 8px 0;
     transition: 0.3s ease-in-out;
 }
 
-.menu .header-menu-sub > li:hover {
+.header-menu-sub > li:hover {
     color: #ff5050;
 }
 
@@ -257,5 +258,13 @@ img {
 }
 
 .mobile-header-menu-icon {
+    display: none;
+}
+
+.mobile-header-menu-wrap {
+    display: none;
+}
+
+#mobile-menu-trigger {
     display: none;
 }

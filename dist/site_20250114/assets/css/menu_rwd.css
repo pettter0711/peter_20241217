@@ -1,0 +1,217 @@
+/* RWD */
+/* @media screen and () {}*/
+/* screen: 裝置類型，常用:screen, print */
+/* max-width: 低於此數值，就觸發 */
+/* min-width: 高於此數值，就觸發 */
+/* 選擇max-width / min-width其中一種後，就用到底，不然樣式會錯 */
+
+/* 原型 */
+/* @media type and (breakpoint) {} */
+
+/* 
+ * 常用的斷點(breakpoint)
+ * 320px ~ 480px 手機
+ * 480px ~ 768px 平板
+ * 768px ~ 1024px 桌機
+ * 1024px ~ 1200px 桌機
+ * 1200px ~ 1920px 桌機
+ */
+
+@media screen and (max-width: 950px) {
+    .top {
+        display: none;
+    }
+
+    .menu .header-wrap {
+        justify-content: center;
+    }
+
+    .menu .header-menu,
+    .menu .header-search {
+        display: none;
+    }
+
+    .mobile-header-menu-icon {
+        display: block;
+        position: absolute;
+        left: 0;
+        /* top不用設定，因為接續父層樣式的align-items，所以會垂直置中 */
+        /* top: 0; */
+    }
+
+    .mobile-header-menu-icon label {
+        cursor: pointer;
+    }
+
+    .mobile-header-menu-icon label img {
+        max-width: 50%;
+    }
+
+    .mobile-header-menu-wrap {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        z-index: 10;
+        width: 300px;
+        height: 100%;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .mobile-menu-close {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.2s ease-in-out;
+    }
+
+    .mobile-header-menu-content {
+        position: absolute;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: left 0.3s ease-in-out;
+    }
+
+    #mobile-menu-trigger:checked ~ .mobile-header-menu-wrap,
+    #mobile-menu-trigger:checked
+        ~ .mobile-header-menu-wrap
+        .mobile-header-menu-content {
+        left: 0;
+    }
+
+    #mobile-menu-trigger:checked ~ .mobile-menu-close {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu-search #mobile-search-input {
+        padding: 0 20px;
+        padding-right: 50px;
+        width: 100%;
+        height: 100%;
+        outline: 0;
+        border: 0;
+        background-color: transparent;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .mobile-menu-search #mobile-search-input::placeholder {
+        color: #646464;
+    }
+
+    .mobile-menu-search label {
+        position: absolute;
+        right: 10px;
+        width: 30px;
+    }
+
+    .mobile-header-menu .mobile-header-menu-list {
+        display: block;
+        font-size: 0.9rem;
+    }
+
+    .mobile-header-menu-list > li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #c5c5c5;
+        position: relative;
+    }
+
+    .mobile-header-menu-list > li > label {
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 100%;
+        border-left: 1px solid #c5c5c5;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        display: none;
+    }
+
+    .mobile-header-menu-list > li.mobile-header-menu-sub-list > label {
+        display: flex;
+    }
+
+    .mobile-header-menu-list > li > label > img {
+        max-width: 50%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile-header-menu-sub-trigger {
+        display: none;
+    }
+
+    .mobile-header-menu-sub-trigger:checked + li.mobile-header-menu-sub-list {
+        background-color: #c5c5c5;
+    }
+
+    .mobile-header-menu-sub-trigger:checked
+        + li.mobile-header-menu-sub-list
+        > label {
+        background-color: #ff3d3d;
+    }
+
+    .mobile-header-menu-sub-trigger:checked
+        + li.mobile-header-menu-sub-list
+        > label
+        > img {
+        transform: rotate(90deg);
+        filter: brightness(0) invert(1);
+    }
+
+    /* .mobile-header-menu-sub-wrap {
+        display: none;
+    } */
+
+    /* 調整子選單ul的max-height，做展開選單的轉場 */
+    .mobile-header-menu-sub-wrap {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    /* 由於子選單的trigger (checkbox) 重複使用，
+    所以當一個子選單trigger被勾選後，會連帶影響後面的子選單 */
+    /* 如要處理，需要修改結構，或是用javascript */
+    .mobile-header-menu-sub-trigger:checked
+        ~ #mobile-header-menu-sub-product-wrap,
+    .mobile-header-menu-sub-trigger:checked
+        ~ #mobile-header-menu-sub-news-wrap {
+        /* display: block; */
+        max-height: 500px;
+    }
+
+    .mobile-header-menu-sub-wrap > li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid #c5c5c5;
+        color: #646464;
+    }
+}
