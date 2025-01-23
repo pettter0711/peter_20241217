@@ -4,13 +4,25 @@
     "prettier.tabWidth": 4,
     "liveSassCompile.settings.formats": [
         {
-            "format": "compressed",
+            "format": "expanded",
             "extensionName": ".css",
             "savePath": "/dist/css"
         }
-    ]
+    ],
+    "liveServer.settings.root": "/dist"
 }
 
 //越接近專案的設定檔(JSON)，等級越高
 //越接近使用者的設定檔(JSON)，等級越低
 // 等級: workspace settings > default settings > user settings
+
+// SCSS，為CSS的預處理器。
+// 初始化中，會新增兩個資料夾，俗稱原始檔:
+// 1.) dist(發布用): 裝要發布上線的專案內容，會呈現給使用者
+// 2.) src(開發用): 裝設定scss的檔案及資源，不會呈現給使用者
+
+// setting.json中設定: "liveSassCompile.settings.formats"
+// format: 格式化方式，包括extended, compressed... (一般開發時設為extended，上線前再設為compressed)
+// extensionName: 編譯後檔案的附檔名
+// savePath: 編譯後檔案的產生位置，預設為scss檔案存在的目錄
+// 當預設設定有修改，需重新watch scss

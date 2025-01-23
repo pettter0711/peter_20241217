@@ -1,3 +1,119 @@
 * {
     margin: 0;
 }
+
+// .no-attr {
+// }
+
+// 註解不會被編譯
+// 無屬性的選擇器不會被編譯
+// 變數宣告不會被編譯，僅會呈現使用結果，且會直接顯示數值
+
+$header-type: 128px;
+$font-w-700: 700;
+$font-w-600: 600;
+$font-w-500: 500;
+$font-w-400: 400;
+
+$font-weights: (
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semi-bold": 600,
+    "bold": 700,
+);
+
+$font-sizes: (
+    "title": 3rem,
+    "min-title": 1.5rem,
+    "context": 1rem,
+    "note": 0.85rem,
+);
+
+.link {
+    padding: 10px 0;
+    width: $header-type;
+    font-weight: $font-w-400;
+}
+
+.context {
+    font-size: map-get($font-sizes, title);
+    font-weight: map-get($font-weights, semi-bold);
+}
+
+.top .menu .content {
+    position: relative;
+    font-size: map-get($font-sizes, context);
+    font-weight: map-get($font-weights, regular);
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.1);
+    }
+
+    a {
+        position: relative;
+        font-size: map-get($font-sizes, note);
+        font-weight: map-get($font-weights, regular);
+
+        &::after {
+            position: absolute;
+            content: "|";
+            top: 0;
+            right: -10px;
+        }
+
+        &:active {
+            color: #ff0000;
+            text-decoration: underline;
+        }
+    }
+}
+
+// SCSS的函數宣告
+// $columns為參數
+// $total也是參數，但加上數值後變成預設值，有預設值代表optional可選
+@function calculate-width($columns, $total: 12) {
+    // return "使用者輸入參數" / "預設值$total"的百分比
+    @return percentage($columns / $total);
+}
+
+.container {
+    width: calculate-width(10);
+}
+
+// SCSS的混入(mixin)宣告與使用
+@mixin flex(
+    // 設定變數
+    $justify-content: center,
+    $align-items: center,
+    $direction: row,
+    $gap: 20px
+) {
+    // 使用
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+.flex {
+    // @include是使用mixin的關鍵字
+    @include flex();
+    width: calculate-width(6);
+}
+
+.flex_2 {
+    // 使用mixin可帶入參數，參數會帶進mixin的變數內(照順序)
+    @include flex(flex-start, flex-end, column, 200px);
+    width: calculate-width(6);
+}
+
+// mixin 用於多屬性宣告集合
+// function 用於計算與取得一個數值
