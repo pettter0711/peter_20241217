@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./base.css" />
+        <title>CSS 過渡效果範例</title>
+        <style>
+            /* 基本按鈕樣式 */
+            .demo-button {
+                padding: 10px 20px;
+                margin: 10px;
+                border: none;
+                border-radius: 4px;
+                background-color: #66d9ef;
+                color: #272822;
+                cursor: pointer;
+                transition: all 0.6s ease;
+                transition-delay: 0.1s;
+            }
+
+            .demo-button:hover {
+                background-color: #a6e22e;
+                transform: scale(1.1);
+            }
+
+            .demo-button.ease-in {
+                transition-timing-function: ease-in;
+            }
+
+            .demo-button.ease-out {
+                transition-timing-function: ease-out;
+            }
+
+            .demo-button.ease-in-out {
+                transition-timing-function: ease-in-out;
+            }
+
+            .demo-button.cubic-bezier {
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .demo-button.steps {
+                transition-timing-function: steps(4, end);
+            }
+
+            .demo-button.linear {
+                transition-timing-function: linear;
+            }
+
+            /* 卡片效果 */
+            .demo-card {
+                width: 200px;
+                padding: 20px;
+                margin: 20px;
+                background-color: #3e3d32;
+                border-radius: 8px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .demo-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            /* 選單展開效果 */
+            .demo-menu {
+                width: 200px;
+                margin: 20px;
+            }
+
+            .demo-menu-item {
+                background-color: #3e3d32;
+                margin-bottom: 5px;
+                overflow: hidden;
+            }
+
+            .demo-menu-title {
+                padding: 10px;
+                background-color: #49483e;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .demo-menu-content {
+                max-height: 0;
+                padding: 0 10px;
+                transition: all 0.3s ease-out;
+            }
+
+            .demo-menu-item.active .demo-menu-title {
+                background-color: #66d9ef;
+                color: #272822;
+            }
+
+            .demo-menu-item.active .demo-menu-content {
+                max-height: 100px;
+                padding: 10px;
+            }
+
+            /* 圖片效果 */
+            .demo-image {
+                width: 200px;
+                height: 200px;
+                margin: 20px;
+                object-fit: cover;
+                transition: all 0.3s ease;
+                filter: grayscale(100%);
+            }
+
+            .demo-image:hover {
+                filter: grayscale(0%);
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            /* 示例容器 */
+            .demo-container {
+                margin: 40px;
+                padding: 20px;
+                border: 1px solid #49483e;
+                border-radius: 8px;
+            }
+
+            .demo-title {
+                color: #f92672;
+                margin-bottom: 20px;
+            }
+
+            .demo-desc {
+                color: #75715e;
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../2_1_CSS進階.html">返回課程</a>
+            </nav>
+        </header>
+
+        <h1>CSS 過渡效果範例</h1>
+
+        <div class="demo-container">
+            <h2 class="demo-title">1. 按鈕懸停效果</h2>
+            <p class="demo-desc">
+                使用 transition 實現滑鼠懸停時的顏色變化和縮放效果
+            </p>
+            <button class="demo-button">懸停效果</button>
+            <button class="demo-button ease-in">ease-in</button>
+            <button class="demo-button ease-out">ease-out</button>
+            <button class="demo-button ease-in-out">ease-in-out</button>
+            <button class="demo-button cubic-bezier">cubic-bezier</button>
+            <button class="demo-button steps">steps</button>
+            <button class="demo-button linear">linear</button>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">2. 卡片懸停效果</h2>
+            <p class="demo-desc">結合位移和陰影的過渡效果</p>
+            <div class="demo-card">
+                <h3>卡片標題</h3>
+                <p>這是一張示範卡片，懸停時會有上浮效果。</p>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">3. 選單展開效果</h2>
+            <p class="demo-desc">使用 max-height 實現展開收合的過渡效果</p>
+            <div class="demo-menu">
+                <div class="demo-menu-item">
+                    <div class="demo-menu-title">點擊展開</div>
+                    <div class="demo-menu-content">
+                        <p>這是展開後的內容區域</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">4. 圖片效果</h2>
+            <p class="demo-desc">結合濾鏡和變形的過渡效果</p>
+            <img
+                src="https://picsum.photos/200/200"
+                alt="示例圖片"
+                class="demo-image"
+            />
+        </div>
+
+        <script>
+            // 選單展開收合功能
+            document.querySelectorAll(".demo-menu-title").forEach((title) => {
+                title.addEventListener("click", () => {
+                    const menuItem = title.parentElement;
+                    menuItem.classList.toggle("active");
+                });
+            });
+        </script>
+    </body>
+</html>

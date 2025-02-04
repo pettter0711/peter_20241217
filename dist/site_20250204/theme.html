@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./base.css" />
+        <title>CSS 變數範例</title>
+        <style>
+            /* 全局變數定義 */
+            :root {
+                /* 基礎間距 */
+                --spacing-unit: 8px;
+                --spacing-small: calc(var(--spacing-unit) * 1);
+                --spacing-medium: calc(var(--spacing-unit) * 2);
+                --spacing-large: calc(var(--spacing-unit) * 3);
+
+                /* 字體大小 */
+                --font-size-base: 16px;
+                --font-size-small: calc(var(--font-size-base) * 0.875);
+                --font-size-large: calc(var(--font-size-base) * 1.25);
+                --font-size-xlarge: calc(var(--font-size-base) * 1.5);
+
+                /* 深色主題（預設） */
+                --bg-primary: #272822;
+                --bg-secondary: #3e3d32;
+                --text-primary: #f8f8f2;
+                --text-secondary: #75715e;
+                --accent-color: #66d9ef;
+                --border-color: #49483e;
+            }
+
+            /* 淺色主題 */
+            :root[data-theme="light"] {
+                --bg-primary: #ffffff;
+                --bg-secondary: #f5f5f5;
+                --text-primary: #333333;
+                --text-secondary: #666666;
+                --accent-color: #0066cc;
+                --border-color: #dddddd;
+            }
+
+            /* 季節主題：春天 */
+            :root[data-theme="spring"] {
+                --bg-primary: #f3f7e9;
+                --bg-secondary: #e8f1d5;
+                --text-primary: #2c5530;
+                --text-secondary: #557b4d;
+                --accent-color: #88c06c;
+                --border-color: #c5d6b0;
+            }
+
+            /* 季節主題：夏天 */
+            :root[data-theme="summer"] {
+                --bg-primary: #f5f9ff;
+                --bg-secondary: #e1eeff;
+                --text-primary: #1a365d;
+                --text-secondary: #2c5282;
+                --accent-color: #4299e1;
+                --border-color: #bee3f8;
+            }
+
+            /* 季節主題：秋天 */
+            :root[data-theme="autumn"] {
+                --bg-primary: #ffdb98;
+                --bg-secondary: #ffcb59;
+                --text-primary: #dd5126;
+                --text-secondary: #f5653a;
+                --accent-color: #fd7113;
+                --border-color: #ffeea0;
+            }
+
+            /* 基本樣式設定 */
+            body {
+                background-color: var(--bg-primary);
+                color: var(--text-primary);
+                transition: all 0.3s ease;
+            }
+
+            .demo-container {
+                margin: var(--spacing-large);
+                padding: var(--spacing-medium);
+                background-color: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+            }
+
+            .demo-title {
+                font-size: var(--font-size-xlarge);
+                color: var(--accent-color);
+                margin-bottom: var(--spacing-medium);
+            }
+
+            .demo-desc {
+                font-size: var(--font-size-base);
+                color: var(--text-secondary);
+                margin-bottom: var(--spacing-medium);
+            }
+
+            /* 主題切換按鈕 */
+            .theme-buttons {
+                display: flex;
+                gap: var(--spacing-medium);
+                margin-bottom: var(--spacing-large);
+            }
+
+            .theme-button {
+                padding: var(--spacing-small) var(--spacing-medium);
+                background-color: var(--accent-color);
+                color: var(--bg-primary);
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .theme-button:hover {
+                opacity: 0.9;
+                transform: translateY(-2px);
+            }
+
+            /* 元件展示區 */
+            .component-demo {
+                padding: var(--spacing-medium);
+                border: 2px solid var(--border-color);
+                border-radius: 8px;
+                margin-top: var(--spacing-medium);
+            }
+
+            .card {
+                background-color: var(--bg-secondary);
+                padding: var(--spacing-medium);
+                border-radius: 8px;
+                margin-bottom: var(--spacing-medium);
+            }
+
+            .card-title {
+                font-size: var(--font-size-large);
+                color: var(--accent-color);
+                margin-bottom: var(--spacing-small);
+            }
+
+            .card-content {
+                font-size: var(--font-size-base);
+                color: var(--text-primary);
+            }
+
+            /* 響應式設計 */
+            @media (max-width: 768px) {
+                :root {
+                    --spacing-unit: 6px;
+                    --font-size-base: 14px;
+                }
+
+                .theme-buttons {
+                    flex-wrap: wrap;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../2_1_CSS進階.html">返回課程</a>
+            </nav>
+        </header>
+
+        <h1>CSS 變數範例</h1>
+
+        <div class="demo-container">
+            <h2 class="demo-title">主題切換示例</h2>
+            <p class="demo-desc">點擊下方按鈕切換不同的主題風格</p>
+
+            <div class="theme-buttons">
+                <button class="theme-button" onclick="setTheme('dark')">
+                    深色主題
+                </button>
+                <button class="theme-button" onclick="setTheme('light')">
+                    淺色主題
+                </button>
+                <button class="theme-button" onclick="setTheme('spring')">
+                    春季主題
+                </button>
+                <button class="theme-button" onclick="setTheme('summer')">
+                    夏季主題
+                </button>
+                <button class="theme-button" onclick="setTheme('autumn')">
+                    秋季主題
+                </button>
+            </div>
+
+            <div class="component-demo">
+                <div class="card">
+                    <h3 class="card-title">卡片標題</h3>
+                    <p class="card-content">
+                        這是一個使用 CSS
+                        變數設計的卡片元件，可以通過切換主題來改變整體風格。
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">變數優勢</h3>
+                    <p class="card-content">
+                        使用 CSS
+                        變數可以輕鬆管理主題色彩、間距、字體大小等樣式，提高代碼的可維護性。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">間距與字體大小</h2>
+            <p class="demo-desc">展示使用變數控制間距和字體大小的效果</p>
+
+            <div class="component-demo">
+                <p style="font-size: var(--font-size-small)">
+                    小型文字 (var(--font-size-small))
+                </p>
+                <p style="font-size: var(--font-size-base)">
+                    基礎文字 (var(--font-size-base))
+                </p>
+                <p style="font-size: var(--font-size-large)">
+                    大型文字 (var(--font-size-large))
+                </p>
+                <p style="font-size: var(--font-size-xlarge)">
+                    特大文字 (var(--font-size-xlarge))
+                </p>
+            </div>
+        </div>
+
+        <script>
+            function setTheme(theme) {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    theme === "dark" ? "" : theme
+                );
+            }
+        </script>
+    </body>
+</html>

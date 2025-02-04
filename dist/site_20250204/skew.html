@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Skew 傾斜效果展示</title>
+        <link rel="stylesheet" href="base.css" />
+        <style>
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: center;
+                padding: 2rem;
+            }
+
+            .box {
+                width: 150px;
+                height: 150px;
+                background: linear-gradient(45deg, #6b88ff, #8ea2ff);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 0.9rem;
+                transition: transform 0.3s ease;
+                margin: 2rem;
+            }
+
+            /* X軸傾斜 */
+            .skewX:hover {
+                transform: skewX(30deg);
+            }
+
+            /* Y軸傾斜 */
+            .skewY:hover {
+                transform: skewY(30deg);
+            }
+
+            /* 同時傾斜 X 和 Y 軸 */
+            .skew:hover {
+                transform: skew(20deg, 10deg);
+            }
+
+            /* 組合變換效果 */
+            .skew-combo:hover {
+                transform: skew(15deg, 15deg) scale(1.2);
+            }
+
+            .description {
+                width: 100%;
+                text-align: center;
+                margin: 2rem 0;
+                color: #333;
+            }
+
+            /* 參數調整控制器 */
+            .controls {
+                width: 100%;
+                text-align: center;
+                margin: 2rem 0;
+            }
+
+            .controls input {
+                width: 200px;
+                margin: 0 10px;
+            }
+
+            .controls label {
+                margin: 0 10px;
+                color: #333;
+            }
+
+            #demo-box {
+                background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="description">
+            <h1>CSS Skew 傾斜效果展示</h1>
+            <p>將滑鼠移到方塊上來查看不同的傾斜效果</p>
+        </div>
+
+        <div class="container">
+            <div class="box skewX">skewX(30deg)</div>
+            <div class="box skewY">skewY(30deg)</div>
+            <div class="box skew">skew(20deg, 10deg)</div>
+            <div class="box skew-combo">skew(15deg) + scale(1.2)</div>
+        </div>
+
+        <div class="description">
+            <h2>互動式傾斜調整</h2>
+            <p>使用滑桿來調整傾斜角度</p>
+        </div>
+
+        <div class="controls">
+            <label>X軸傾斜: <span id="skewX-value">0</span>度</label>
+            <input
+                type="range"
+                id="skewX-control"
+                min="-60"
+                max="60"
+                value="0"
+            />
+            <br /><br />
+            <label>Y軸傾斜: <span id="skewY-value">0</span>度</label>
+            <input
+                type="range"
+                id="skewY-control"
+                min="-60"
+                max="60"
+                value="0"
+            />
+        </div>
+
+        <div class="container">
+            <div class="box" id="demo-box">互動式調整方塊</div>
+        </div>
+
+        <script>
+            const demoBox = document.getElementById("demo-box");
+            const skewXControl = document.getElementById("skewX-control");
+            const skewYControl = document.getElementById("skewY-control");
+            const skewXValue = document.getElementById("skewX-value");
+            const skewYValue = document.getElementById("skewY-value");
+
+            function updateSkew() {
+                const x = skewXControl.value;
+                const y = skewYControl.value;
+                demoBox.style.transform = `skew(${x}deg, ${y}deg)`;
+                skewXValue.textContent = x;
+                skewYValue.textContent = y;
+            }
+
+            skewXControl.addEventListener("input", updateSkew);
+            skewYControl.addEventListener("input", updateSkew);
+        </script>
+    </body>
+</html>

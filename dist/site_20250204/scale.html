@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Scale 示範</title>
+        <style>
+            .container {
+                margin: 50px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                perspective: 1000px;
+            }
+
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: #66d9ef;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #333;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+
+            /* 基本縮放 */
+            .box-1:hover {
+                transform: scale(1.2);
+            }
+
+            /* X軸縮放 */
+            .box-2:hover {
+                transform: scaleX(1.5);
+            }
+
+            /* Y軸縮放 */
+            .box-3:hover {
+                transform: scaleY(1.5);
+            }
+
+            /* 縮小效果 */
+            .box-4:hover {
+                transform: scale(0.8);
+            }
+
+            /* 組合效果 */
+            .box-5:hover {
+                /* transform: scale(1.1) rotate(10deg); */
+                /* transform: scale(1.1);
+                transform: rotate(10deg); */
+                transform: scale(1.1) rotateY(50deg);
+                background-color: #a6e22e;
+            }
+
+            /* 脈動動畫 */
+            .box-6 {
+                animation: pulse 2s infinite;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box box-1">放大效果<br />scale(1.2)</div>
+            <div class="box box-2">水平縮放<br />scaleX(1.5)</div>
+            <div class="box box-3">垂直縮放<br />scaleY(1.5)</div>
+            <div class="box box-4">縮小效果<br />scale(0.8)</div>
+            <div class="box box-5">組合效果<br />scale + rotate</div>
+            <div class="box box-6">脈動動畫<br />animation</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <style>
+            .scene {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                perspective: 1000px;
+            }
+
+            .cube {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                transform-style: preserve-3d;
+                animation: rotate 4s linear infinite both;
+            }
+
+            @keyframes rotate {
+                0% {
+                    transform: rotateX(15deg) rotateY(0);
+                }
+
+                100% {
+                    transform: rotateX(-15deg) rotateY(360deg);
+                }
+            }
+
+            .cube-face {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+                height: 200px;
+                border: 2px solid #fff;
+                transform: translateZ(100px);
+                opacity: 0.8;
+            }
+
+            .cube-face.front {
+                background-color: #f33a3a;
+                transform: rotateY(0) translateZ(100px);
+            }
+
+            .cube-face.back {
+                background-color: #f3d13a;
+                transform: rotateY(180deg) translateZ(100px);
+            }
+
+            .cube-face.left {
+                background-color: #bcf33a;
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+
+            .cube-face.right {
+                background-color: #3af38d;
+                transform: rotateY(90deg) translateZ(100px);
+            }
+
+            .cube-face.top {
+                background-color: #3ac8f3;
+                transform: rotateX(90deg) translateZ(100px);
+            }
+
+            .cube-face.bottom {
+                background-color: #4d3af3;
+                transform: rotateX(-90deg) translateZ(100px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="scene">
+            <div class="cube">
+                <div class="cube-face front">前</div>
+                <div class="cube-face back">後</div>
+                <div class="cube-face left">左</div>
+                <div class="cube-face right">右</div>
+                <div class="cube-face top">上</div>
+                <div class="cube-face bottom">下</div>
+            </div>
+        </div>
+    </body>
+</html>

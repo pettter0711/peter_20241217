@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default" data-size="normal">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS variable</title>
+        <link rel="stylesheet" href="./base.css" />
+        <style>
+            :root {
+                --primary-color: #007bff;
+                --primary-color-reverse: #fff;
+                --success-color: #28a745;
+                --success-color-reverse: #fff;
+                --danger-color: #dc3545;
+                --danger-color-reverse: #fff;
+                --warning-color: #fd7e14;
+                --warning-color-reverse: #fff;
+                --info-color: #17a2b8;
+                --info-color-reverse: #fff;
+                --bg-color: #f8f9fa;
+                --badge-padding: 5px 10px;
+                --select-bg: #ffffff;
+                --select-border: #ced4da;
+                --select-text: #495057;
+            }
+
+            :root[data-theme="dark"] {
+                --primary-color: #375a7f;
+                --primary-color-reverse: #ffffff;
+                --success-color: #00bc8c;
+                --success-color-reverse: #ffffff;
+                --danger-color: #e74c3c;
+                --danger-color-reverse: #ffffff;
+                --warning-color: #f39c12;
+                --warning-color-reverse: #ffffff;
+                --info-color: #3498db;
+                --info-color-reverse: #ffffff;
+                --bg-color: #222222;
+                --select-bg: #444444;
+                --select-border: #666666;
+                --select-text: #ffffff;
+            }
+
+            :root[data-size="small"] {
+                --badge-padding: 3px 6px;
+            }
+
+            :root[data-size="large"] {
+                --badge-padding: 10px 20px;
+            }
+
+            body {
+                background-color: var(--bg-color);
+            }
+
+            .badge {
+                padding: var(--badge-padding);
+                border-radius: 5px;
+                color: #fff;
+            }
+
+            .badge-primary {
+                background-color: var(--primary-color);
+                color: var(--primary-color-reverse);
+            }
+
+            .badge-success {
+                background-color: var(--success-color);
+                color: var(--success-color-reverse);
+            }
+
+            .badge-danger {
+                background-color: var(--danger-color);
+                color: var(--danger-color-reverse);
+            }
+
+            .badge-warning {
+                background-color: var(--warning-color);
+                color: var(--warning-color-reverse);
+            }
+
+            .badge-info {
+                background-color: var(--info-color);
+                color: var(--info-color-reverse);
+            }
+
+            .theme-controls {
+                margin-bottom: 20px;
+            }
+
+            .theme-controls select {
+                padding: 8px 12px;
+                border: 1px solid var(--select-border);
+                border-radius: 4px;
+                background-color: var(--select-bg);
+                color: var(--select-text);
+                margin-right: 10px;
+                cursor: pointer;
+                outline: none;
+                font-size: 14px;
+            }
+
+            .theme-controls select:hover {
+                border-color: var(--primary-color);
+            }
+
+            .theme-controls select:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="theme-controls">
+            <select id="themeSelect">
+                <option value="default">預設主題</option>
+                <option value="dark">深色主題</option>
+            </select>
+
+            <select id="sizeSelect">
+                <option value="normal">正常大小</option>
+                <option value="small">小尺寸</option>
+                <option value="large">大尺寸</option>
+            </select>
+        </div>
+
+        <div>
+            <span class="badge badge-primary">主要</span>
+            <span class="badge badge-success">成功</span>
+            <span class="badge badge-danger">危險</span>
+            <span class="badge badge-warning">警告</span>
+            <span class="badge badge-info">信息</span>
+        </div>
+
+        <script>
+            const themeSelect = document.getElementById("themeSelect");
+            const sizeSelect = document.getElementById("sizeSelect");
+            const html = document.documentElement;
+
+            themeSelect.addEventListener("change", (e) => {
+                html.setAttribute("data-theme", e.target.value);
+            });
+
+            sizeSelect.addEventListener("change", (e) => {
+                html.setAttribute("data-size", e.target.value);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./base.css" />
+        <title>CSS 動畫效果範例</title>
+        <style>
+            /* 載入動畫 */
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .loading {
+                width: 50px;
+                height: 50px;
+                border: 5px solid #3e3d32;
+                border-top-color: #66d9ef;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                animation-direction: reverse;
+            }
+
+            /* 彈跳效果 */
+            @keyframes bounce {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            .bounce {
+                width: 50px;
+                height: 50px;
+                background-color: #a6e22e;
+                border-radius: 50%;
+                animation: bounce 1s ease-in-out infinite;
+            }
+
+            /* 淡入效果 */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .fade-in {
+                animation: fadeIn 1s ease-out forwards;
+            }
+
+            /* 脈動效果 */
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            .pulse {
+                width: 50px;
+                height: 50px;
+                background-color: #f92672;
+                border-radius: 50%;
+                animation: pulse 1.5s ease-in-out infinite;
+            }
+
+            /* 搖擺效果 */
+            @keyframes swing {
+                0%,
+                100% {
+                    transform: rotate(0deg);
+                }
+                25% {
+                    transform: rotate(15deg);
+                }
+                75% {
+                    transform: rotate(-15deg);
+                }
+            }
+
+            .swing {
+                width: 50px;
+                height: 50px;
+                background-color: #e6db74;
+                animation: swing 2s ease-in-out infinite;
+                transform-origin: top center;
+            }
+
+            /* 多重動畫示例 */
+            @keyframes colorChange {
+                0% {
+                    background-color: #66d9ef;
+                }
+                50% {
+                    background-color: #a6e22e;
+                }
+                100% {
+                    background-color: #f92672;
+                }
+            }
+
+            .multi-animation {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                animation: pulse 2s ease-in-out infinite,
+                    colorChange 4s linear infinite;
+            }
+
+            /* 示例容器樣式 */
+            .demo-container {
+                margin: 40px;
+                padding: 20px;
+                border: 1px solid #49483e;
+                border-radius: 8px;
+            }
+
+            .demo-title {
+                color: #f92672;
+                margin-bottom: 20px;
+            }
+
+            .demo-desc {
+                color: #75715e;
+                margin-bottom: 15px;
+            }
+
+            .demo-box {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+                background-color: #272822;
+                border-radius: 4px;
+            }
+
+            /* 動畫控制按鈕 */
+            .control-button {
+                padding: 8px 16px;
+                background-color: #66d9ef;
+                color: #272822;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .control-button:hover {
+                background-color: #a6e22e;
+            }
+
+            .paused {
+                animation-play-state: paused;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../2_1_CSS進階.html">返回課程</a>
+            </nav>
+        </header>
+
+        <h1>CSS 動畫效果範例</h1>
+
+        <div class="demo-container">
+            <h2 class="demo-title">1. 載入動畫</h2>
+            <p class="demo-desc">使用 rotate 製作簡單的載入指示器</p>
+            <div class="demo-box">
+                <div class="loading"></div>
+                <button class="control-button" onclick="toggleAnimation(this)">
+                    暫停動畫
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">2. 彈跳效果</h2>
+            <p class="demo-desc">使用 translateY 製作彈跳動畫</p>
+            <div class="demo-box">
+                <div class="bounce"></div>
+                <button class="control-button" onclick="toggleAnimation(this)">
+                    暫停動畫
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">3. 淡入效果</h2>
+            <p class="demo-desc">結合透明度和位移的動畫</p>
+            <div class="demo-box">
+                <div class="fade-in">
+                    <h3>淡入內容</h3>
+                    <p>這段文字會淡入顯示</p>
+                </div>
+                <button class="control-button" onclick="resetFadeIn(this)">
+                    重播動畫
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">4. 脈動效果</h2>
+            <p class="demo-desc">使用 scale 製作脈動動畫</p>
+            <div class="demo-box">
+                <div class="pulse"></div>
+                <button class="control-button" onclick="toggleAnimation(this)">
+                    暫停動畫
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">5. 搖擺效果</h2>
+            <p class="demo-desc">使用 rotate 製作搖擺動畫</p>
+            <div class="demo-box">
+                <div class="swing"></div>
+                <button class="control-button" onclick="toggleAnimation(this)">
+                    暫停動畫
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h2 class="demo-title">6. 多重動畫</h2>
+            <p class="demo-desc">同時執行多個動畫效果</p>
+            <div class="demo-box">
+                <div class="multi-animation"></div>
+                <button class="control-button" onclick="toggleAnimation(this)">
+                    暫停動畫
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function toggleAnimation(button) {
+                const animationElement = button.previousElementSibling;
+                animationElement.classList.toggle("paused");
+                button.textContent = animationElement.classList.contains(
+                    "paused"
+                )
+                    ? "繼續動畫"
+                    : "暫停動畫";
+            }
+
+            function resetFadeIn(button) {
+                const fadeElement = button.previousElementSibling;
+                fadeElement.style.animation = "none";
+                fadeElement.offsetHeight; // 觸發重排
+                fadeElement.style.animation = null;
+            }
+        </script>
+    </body>
+</html>
