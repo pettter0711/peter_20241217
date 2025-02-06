@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bootstrap使用範例</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hello World!</h1>
+            <h2>Hello World!</h2>
+        </div>
+        <hr />
+        <main>
+            <div class="container">
+                <section>
+                    <h2>按鈕樣式</h2>
+                    <div
+                        class="mb-2 d-flex gap-2 justify-content-between align-items-center"
+                    >
+                        <button class="btn btn-primary">按鈕</button>
+                        <button class="btn btn-secondary">按鈕2</button>
+                        <button class="btn btn-success">按鈕3</button>
+                        <button class="btn btn-warning">按鈕4</button>
+                        <button class="btn btn-danger">按鈕5</button>
+                        <button class="btn btn-light">按鈕6</button>
+                        <button class="btn btn-dark disabled">按鈕7</button>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary btn-lg w-50 mb-2">
+                            大按鈕
+                        </button>
+                        <button class="btn btn-outline-success btn-sm disabled">
+                            按鈕鈕
+                        </button>
+                    </div>
+                    <div class="mb-2">
+                        <a href="https://google.com/" class="btn btn-danger"
+                            >Google</a
+                        >
+                    </div>
+                </section>
+                <hr />
+                <section>
+                    <h2>警告視窗</h2>
+                    <div class="alert alert-primary" role="alert">警告範例</div>
+                    <div
+                        class="alert alert-danger d-flex align-items-center"
+                        role="alert"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                            viewBox="0 0 16 16"
+                            role="img"
+                            aria-label="Warning:"
+                        >
+                            <path
+                                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                            />
+                        </svg>
+                        <div>An example alert with an icon</div>
+                    </div>
+                    <div class="alert alert-success">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                            viewBox="0 0 16 16"
+                            role="img"
+                            aria-label="Warning:"
+                        >
+                            <path
+                                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                            />
+                        </svg>
+                        <a href="#" class="btn btn-dark">連結按鈕</a>
+                    </div>
+                    <div
+                        class="alert alert-warning alert-dismissible fade show"
+                        role="alert"
+                    >
+                        <span>這是一個可以關閉的警告窗</span>
+                        <button
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close"
+                        ></button>
+                        <!-- data-bs-dismiss: bootsrap的js綁定 -->
+                        <!-- aria的屬性: 無障礙標準使用，不用不影響樣式呈現 -->
+                    </div>
+                </section>
+                <hr />
+                <section>
+                    <h2>Modal對話框</h2>
+
+                    <div>
+                        <div>
+                            Modal
+                            對話框是一種常見的網頁互動元件，用於顯示重要資訊或需要用戶確認的內容。
+                        </div>
+                        <div class="mt-3 text-end">
+                            <button
+                                class="btn btn-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#example"
+                            >
+                                點我試試
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="modal fade"
+                        id="example"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                    >
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1
+                                        class="modal-title fs-5"
+                                        id="exampleModalLabel"
+                                    >
+                                        Modal 標題
+                                    </h1>
+                                    <button
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                    ></button>
+                                </div>
+                                <div class="modal-body">
+                                    恭喜你成功叫出Modal
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal"
+                                    >
+                                        關閉
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        儲存
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section>
+                    <h2>卡片</h2>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">123</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">Card Title</div>
+                                <div class="card-body">123</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">Title</div>
+                                <div class="card-body">123</div>
+                                <div class="card-footer">Footer</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img
+                                    src="https://picsum.photos/200/300"
+                                    alt="Picture"
+                                    class="card-img-top"
+                                />
+                                <div class="card-body">
+                                    <div class="card-title">Title</div>
+                                    <p class="card-text">
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section>
+                    <h2>表單元素</h2>
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">姓名</label>
+                        <input type="text" id="userName" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="userCity" class="form-label">城市</label>
+                        <select name="" id="userCity" class="form-select">
+                            <option value="1">台北市</option>
+                            <option value="2">新北市</option>
+                            <option value="3">桃園市</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <input
+                            type="checkbox"
+                            name=""
+                            id="agree"
+                            class="form-check-input"
+                        />
+                        <label for="agree" class="form-check-label ms-1"
+                            >同意條款</label
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <input
+                            type="radio"
+                            id="male"
+                            class="form-check-input"
+                        />
+                        <label for="male" class="form-check-label ms-1"
+                            >男</label
+                        >
+                        <input
+                            type="radio"
+                            id="female"
+                            class="form-check-input"
+                        />
+                        <label for="female" class="form-check-label ms-1"
+                            >女</label
+                        >
+                    </div>
+                    <div class="mb-3">
+                        <textarea
+                            name=""
+                            id="userText"
+                            class="form-control"
+                        ></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary w-100">送出</button>
+                    </div>
+                </section>
+                <hr />
+            </div>
+        </main>
+    </body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+    ></script>
+</html>
