@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript 計算機範例</title>
+        <style>
+            body {
+                font-family: 'Microsoft JhengHei', sans-serif;
+                line-height: 1.6;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #272822;
+                color: #f8f8f2;
+            }
+
+            h1 {
+                color: #66d9ef;
+            }
+
+            .calculator {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 5px;
+                margin: 20px 0;
+            }
+
+            .calculator button {
+                background-color: #66d9ef;
+                color: #272822;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            .calculator button:hover {
+                background-color: #a6e22e;
+            }
+
+            .calculator .display {
+                grid-column: 1 / -1;
+                background-color: #272822;
+                padding: 10px;
+                text-align: right;
+                font-family: monospace;
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                border-radius: 4px;
+            }
+
+            .calculator .operator {
+                background-color: #f92672;
+            }
+
+            .calculator .equals {
+                background-color: #a6e22e;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>JavaScript 計算機範例</h1>
+
+        <div class="calculator">
+            <div id="display" class="display">0</div>
+            <button onclick="calculator.clear()">C</button>
+            <button onclick="calculator.appendNumber('7')">7</button>
+            <button onclick="calculator.appendNumber('8')">8</button>
+            <button onclick="calculator.appendNumber('9')">9</button>
+            <button class="operator" onclick="calculator.setOperator('+')">+</button>
+            <button onclick="calculator.appendNumber('4')">4</button>
+            <button onclick="calculator.appendNumber('5')">5</button>
+            <button onclick="calculator.appendNumber('6')">6</button>
+            <button class="operator" onclick="calculator.setOperator('-')">-</button>
+            <button onclick="calculator.appendNumber('1')">1</button>
+            <button onclick="calculator.appendNumber('2')">2</button>
+            <button onclick="calculator.appendNumber('3')">3</button>
+            <button class="operator" onclick="calculator.setOperator('*')">×</button>
+            <button onclick="calculator.appendNumber('0')">0</button>
+            <button onclick="calculator.appendNumber('.')">.</button>
+            <button class="equals" onclick="calculator.calculate()">=</button>
+            <button class="operator" onclick="calculator.setOperator('/')">÷</button>
+        </div>
+
+        <script>
+            class Calculator {
+                constructor() {
+                    this.displayValue = '0'
+                    this.firstOperand = null
+                    this.operator = null
+                    this.waitingForSecondOperand = false
+                }
+
+                updateDisplay() {
+                    document.getElementById('display').textContent = this.displayValue
+                }
+
+                appendNumber(number) {
+                    if (this.waitingForSecondOperand) {
+                        this.displayValue = number
+                        this.waitingForSecondOperand = false
+                    } else {
+                        this.displayValue = this.displayValue === '0' ? number : this.displayValue + number
+                    }
+                    this.updateDisplay()
+                }
+
+                clear() {
+                    this.displayValue = '0'
+                    this.firstOperand = null
+                    this.operator = null
+                    this.waitingForSecondOperand = false
+                    this.updateDisplay()
+                }
+
+                setOperator(nextOperator) {
+                    const inputValue = parseFloat(this.displayValue)
+
+                    if (this.firstOperand === null) {
+                        this.firstOperand = inputValue
+                    } else if (this.operator) {
+                        const result = this.calculate()
+                        this.displayValue = String(result)
+                        this.firstOperand = result
+                    }
+
+                    this.waitingForSecondOperand = true
+                    this.operator = nextOperator
+                    this.updateDisplay()
+                }
+
+                calculate() {
+                    const secondOperand = parseFloat(this.displayValue)
+                    let result = 0
+
+                    switch (this.operator) {
+                        case '+':
+                            result = this.firstOperand + secondOperand
+                            break
+                        case '-':
+                            result = this.firstOperand - secondOperand
+                            break
+                        case '*':
+                            result = this.firstOperand * secondOperand
+                            break
+                        case '/':
+                            result = this.firstOperand / secondOperand
+                            break
+                        default:
+                            return secondOperand
+                    }
+
+                    this.displayValue = String(result)
+                    this.operator = null
+                    this.firstOperand = result
+                    this.waitingForSecondOperand = false
+                    this.updateDisplay()
+                    return result
+                }
+            }
+
+            const calculator = new Calculator()
+        </script>
+    </body>
+</html>
