@@ -1,0 +1,107 @@
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border-bottom: 1px solid #000;
+}
+
+header .title {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+}
+
+.main-wrap {
+    width: 100%;
+}
+
+.main-wrap > div {
+    margin-bottom: 10px;
+}
+
+main .desc {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.num-input > label {
+    margin-right: 3px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #185bc0;
+    cursor: pointer;
+}
+
+.num-input > input {
+    padding: 2px 10px;
+    outline: 0;
+    border: 2px solid #185bc0;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.btn-area {
+    text-align: center;
+}
+
+.btn-area > button {
+    padding: 5px 12px;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    background-color: #185bc0;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-are > button:hover {
+    background-color: #114592;
+}
+
+.result-position {
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #f18b16;
+    border-radius: 10px;
+    /* overflow: scroll; */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #add0fd;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+tbody tr td:first-child {
+    background-color: #add0fd;
+}
