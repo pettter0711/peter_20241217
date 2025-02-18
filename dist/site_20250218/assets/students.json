@@ -1,0 +1,18 @@
+{
+    "students": [
+        {
+            "name": "John",
+            "age": 20,
+            "city": "Taipei",
+            "email": "david@gmail.com",
+            "score": 90
+        },
+        {
+            "name": "David",
+            "age": 20,
+            "city": "Taipei",
+            "email": "david@gmail.com",
+            "score": 80
+        }
+    ]
+}
