@@ -75,9 +75,10 @@ main .desc {
 .result-position {
     margin: 0 auto;
     padding: 20px;
+    max-height: 500px;
     border: 2px solid #f18b16;
     border-radius: 10px;
-    /* overflow: scroll; */
+    overflow: scroll;
 }
 
 table {

@@ -1,30 +1,53 @@
-let elNum1 = document.querySelector("num1");
-let elNum2 = document.querySelector("num2");
-let btn = document.querySelector("run-btn");
+let elNum1 = document.querySelector("#num1");
+let elNum2 = document.querySelector("#num2");
+let btn = document.querySelector(".run-btn");
 let result = document.querySelector(".result");
 
-let a = 9;
-let b = 9;
-let res = 0;
-
 const run = () => {
-    if (isNaN(elNum1) || isNaN(elNum2)) {
+    let num1 = +elNum1.value;
+    let num2 = +elNum2.value;
+
+    if (isNaN(num1) || !num1 || isNaN(num2) || !num2) {
         return;
     }
 
-    let a = +elNum1.value;
-    let b = +elNum2.value;
-    let html = "";
+    // thead
+    let thead = `<tr><th>`;
+    for (let i = 1; i <= num1; i++) {
+        thead += `<th>${i}</th>`;
+    }
+    thead += "</tr>";
 
-    for (let i = 1; i <= a; i++) {
-        for (let j = 1; j <= b; j++) {
-            res = i * j;
-            console.log(`${i} * ${j} = ${res}`);
+    // tbody
+    let tbody = "";
+    for (let i = 1; i <= num2; i++) {
+        tbody += `<tr><td>${i}</td>`;
+
+        for (let j = 1; j <= num1; j++) {
+            tbody += `<td>${i * j}</td>`;
+            console.log(`${i} * ${j} = ${i * j}`);
         }
     }
-    // 待處理html的render
+    tbody += "</tr>";
+
+    result.querySelector("table thead").innerHTML = thead;
+    result.querySelector("table tbody").innerHTML = tbody;
+
+    elNum1.value = "";
+    elNum2.value = "";
+
+    elNum1.focus();
 };
 
 btn.addEventListener("click", (e) => {
     run();
+});
+
+document.addEventListener("keyup", (e) => {
+    e.preventDefault();
+
+    let key = e.key.toString().toUpperCase();
+    if (key == "ENTER") {
+        run();
+    }
 });
