@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS TODO</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/demo_todo.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <h1>TODO 清單</h1>
+        <div class="todo-container">
+            <div class="todo-header">
+                <input
+                    type="text"
+                    id="todoInput"
+                    placeholder="輸入新的待辦事項..."
+                />
+                <button id="addTodo">新增</button>
+            </div>
+            <ul id="todoList">
+                <!-- <li>
+                    <input type="checkbox" />
+                    <span>待辦事項示例</span>
+                    <button class="delete-btn">刪除</button>
+                </li> -->
+            </ul>
+        </div>
+    </body>
+    <script src="assets/js/demo_todo.js"></script>
+</html>

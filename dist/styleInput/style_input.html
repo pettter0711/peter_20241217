@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>樣式呈現器</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../css/style_input.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="head-wrap">
+                    <h1 class="title">樣式呈現器</h1>
+                </div>
+            </div>
+        </header>
+        <main class="app">
+            <div class="container">
+                <div class="style-input-wrap">
+                    <div class="user-area">
+                        <div class="el-input">
+                            <select name="" id="styleType">
+                                <option value="backgroundColor">
+                                    背景顏色
+                                </option>
+                                <option value="borderRadius">圓角</option>
+                            </select>
+                            <input
+                                type="text"
+                                id="styleInput"
+                                placeholder="輸入樣式"
+                            />
+                            <button class="btn add-style">送出</button>
+                            <button class="btn remove-style">清除樣式</button>
+                        </div>
+                        <div class="box-btn">
+                            <button class="btn add-box">新增</button>
+                            <button class="btn remove-box">移除</button>
+                        </div>
+                    </div>
+                    <div class="result">
+                        <div class="show-box">
+                            <input
+                                type="checkbox"
+                                class="box"
+                                id="index"
+                                value="box"
+                            />
+                            <label for="index"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="assets/js/style_input.js"></script>
+</html>

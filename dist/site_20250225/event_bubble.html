@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>事件氣泡</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/demo_bubble.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>事件氣泡</h1>
+            <!-- 當我點到 li 的時候，會印出 li 的內容 -->
+            <!-- 需要可以新增項目，且新增項目也可以點擊 -->
+            <ul id="list">
+                <li class="list-item">item 1</li>
+                <li class="list-item">item 2</li>
+                <li class="list-item">item 3</li>
+            </ul>
+            <!-- issue: 假設項目有 100 萬個，這樣效能會很差 -->
+
+            <!-- 新增項目 -->
+            <div class="input-container">
+                <input type="text" id="new-item" placeholder="請輸入新項目" />
+                <button id="add-item">新增</button>
+            </div>
+        </div>
+    </body>
+    <script src="assets/js/demo_bubble.js"></script>
+</html>

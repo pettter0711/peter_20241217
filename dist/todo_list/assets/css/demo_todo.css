@@ -1,0 +1,137 @@
+* {
+    font-family: "微軟正黑體", Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+}
+
+.todo-header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#todoInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#todoInput:focus {
+    border-color: #4caf50;
+}
+
+#addTodo {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#addTodo:hover {
+    background-color: #388e3c;
+}
+
+#todoList {
+    list-style-type: none;
+    width: 100%;
+}
+
+#todoList li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+#todoList li:hover {
+    background-color: #f9f9f9;
+}
+
+#todoList li:last-child {
+    border-bottom: none;
+}
+
+/* 新增複選框樣式 */
+#todoList input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: #4caf50;
+}
+
+/* 待辦事項文字樣式 */
+#todoList span {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s, text-decoration 0.3s;
+    word-break: break-word;
+}
+
+/* 已完成項目樣式 */
+#todoList input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* 刪除按鈕樣式 */
+#todoList button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#todoList button:hover {
+    background-color: #d32f2f;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-text {
+    flex-grow: 1;
+    margin-right: 10px;
+    word-break: break-word;
+}

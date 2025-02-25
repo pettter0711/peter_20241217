@@ -1,0 +1,21 @@
+$primary-color: #1bf1aa;
+$secondary-color: #1b201f;
+$support-color: #fff;
+$bg-color: #eee;
+
+$font-size: (
+    "base": 16px,
+    "sm": 0.85rem,
+    "md": 1rem,
+    "lg": 1.5rem,
+    "title": 2rem,
+);
+
+$font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+html,
+body {
+    font-family: $font-family;
+    font-size: map-get($font-size, base);
+    background-color: $bg-color;
+}
