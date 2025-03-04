@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue Use</title>
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+    </head>
+    <body>
+        <section>
+            <h1>Vue Use</h1>
+            <div id="options-app">
+                <div>{{ name }}</div>
+                <div>
+                    <button @click="setName('John')">Set to John</button>
+                </div>
+            </div>
+        </section>
+        <br />
+        <section>
+            <h1>Composition API</h1>
+            <div id="composition-app">
+                <div>{{ name }}</div>
+                <div>
+                    <button @click="setName('John')">Set to John</button>
+                </div>
+            </div>
+        </section>
+    </body>
+    <!-- Vue: 開發環境用CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Vue: 正式環境用CDN -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> -->
+    <script src="assets/js/vue_use.js"></script>
+    <!-- <script type="module" src="assets/js/vue_es.js"></script> -->
+</html>
