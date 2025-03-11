@@ -1,0 +1,50 @@
+.header {
+    height: var(--header-height);
+    background-color: var(--header-bg-color);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-list li {
+    transition: 0.3s color;
+}
+
+.menu-list li:hover {
+    color: var(--primary-color);
+}
+
+.menu-list li.active {
+    position: relative;
+    color: var(--primary-color);
+}
+
+.menu-list li.active::after {
+    position: absolute;
+    content: "";
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid var(--primary-color);
+    /* transform: translateX(-1%);
+    width: calc(100% + 2px);
+    height: 2px;
+    background-color: var(--primary-color); */
+}
