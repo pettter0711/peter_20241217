@@ -1,0 +1,39 @@
+.index-service {
+    padding: 96px 0;
+    background-color: var(--section-bg);
+}
+
+.index-service .service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 2rem;
+}
+
+.index-service .service-list li {
+    background-color: var(--background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.index-service .service-list li:hover {
+    transform: translateY(-5px);
+}
+
+.index-service .service-list li .service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.index-service .service-list li .service-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.index-service .service-list li .service-content {
+    font-weight: 300;
+}
