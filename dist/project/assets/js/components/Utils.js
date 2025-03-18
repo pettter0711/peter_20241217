@@ -10,7 +10,10 @@ const demo = function () {
 
 const loadFile = async function (selector, filePath) {
     let dom = document.querySelector(selector);
-    if (!dom) return;
+    if (!dom) {
+        console.error("DOM 抓錯囉!");
+        return;
+    }
 
     try {
         const request = await fetch(filePath);
