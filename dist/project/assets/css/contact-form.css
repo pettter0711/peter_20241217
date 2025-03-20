@@ -1,0 +1,122 @@
+.contact-form {
+    padding: 60px 0;
+    background-color: var(--background);
+}
+
+.contact-form-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.contact-form-inner .form-left {
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.contact-form-inner .form-right {
+    padding: 30px;
+    border-radius: 8px;
+    background-color: var(--background);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-inner h2 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 26px;
+}
+
+.contact-form-inner .form-item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.contact-form-inner .form-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: transform 0.3s ease;
+}
+
+.contact-form-inner .form-item:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+.contact-form-inner .form-left .form-item-icon {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.contact-form-inner .form-left .form-item-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.contact-form-inner .form-left .form-item-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-form-inner .form-right h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form-inner .form-right .form-item {
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.contact-form-inner .form-right .form-item:hover {
+    transform: unset;
+}
+
+.contact-form-inner .form-wrap label {
+    display: block;
+    font-weight: 400;
+    cursor: pointer;
+}
+.contact-form-inner .form-wrap input,
+.contact-form-inner .form-wrap textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form-inner .form-wrap input:focus,
+.contact-form-inner .form-wrap textarea:focus {
+    border-color: #007bff;
+    border-width: 2px;
+}
+
+.contact-form-inner .form-wrap textarea {
+    padding: 5px;
+    height: 100px;
+    resize: none;
+}
+
+.contact-form-inner .form-wrap .form-submit-btn {
+    padding: 12px 30px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-inner .form-wrap .form-submit-btn:hover {
+    background-color: #0056b3;
+}

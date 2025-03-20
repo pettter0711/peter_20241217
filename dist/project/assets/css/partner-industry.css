@@ -1,0 +1,43 @@
+.partner-industry {
+    padding: 6rem 0;
+    background-color: var(--background);
+}
+
+.partner-industry-inner h2 {
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.partner-industry-inner .partner-industry-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.partner-industry-inner .partner-industry-list > div {
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--background);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.partner-industry-inner .partner-industry-list > div:hover {
+    transform: translateY(-5px);
+}
+
+.partner-industry-inner .partner-industry-list i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.partner-industry-inner .partner-industry-list .name {
+    margin-bottom: 10px;
+}
+
+.partner-industry-inner .partner-industry-list .description {
+    color: #4e4e4e;
+}

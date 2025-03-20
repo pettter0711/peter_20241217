@@ -1,7 +1,7 @@
 import { TodoUserStorage } from "../component/TodoUserStorage.js";
 import { TodoItemStorage } from "../component/TodoItemStorage.js";
 import { TodoApiStorage } from "../component/TodoApiStorage.js";
-import { TodoApiRequest } from "./components/TodoApiRequest.js";
+import { TodoApiRequest } from "../component/TodoApiRequest.js";
 
 const { createApp } = Vue;
 
