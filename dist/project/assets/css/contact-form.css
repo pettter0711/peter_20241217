@@ -74,9 +74,6 @@
 .contact-form-inner .form-right .form-item {
     align-items: flex-start;
     margin-bottom: 15px;
-}
-
-.contact-form-inner .form-right .form-item:hover {
     transform: unset;
 }
 
@@ -88,10 +85,13 @@
 .contact-form-inner .form-wrap input,
 .contact-form-inner .form-wrap textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 5px;
     font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
 .contact-form-inner .form-wrap input:focus,
