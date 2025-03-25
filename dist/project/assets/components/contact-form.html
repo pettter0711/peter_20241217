@@ -32,7 +32,7 @@
             </div>
             <div class="form-right">
                 <h2>發送訊息</h2>
-                <form action="" class="form-wrap">
+                <form action="" class="form-wrap" id="contact-form-app">
                     <div class="form-item">
                         <label for="contact-form-name">姓名</label>
                         <input
@@ -40,6 +40,7 @@
                             name="contact-form-name"
                             id="contact-form-name"
                             placeholder="請輸入姓名"
+                            v-model="db.name"
                         />
                     </div>
                     <div class="form-item">
@@ -49,6 +50,7 @@
                             name="contact-form-email"
                             id="contact-form-email"
                             placeholder="請輸入電子郵件"
+                            v-model="db.email"
                         />
                     </div>
                     <div class="form-item">
@@ -58,6 +60,7 @@
                             name="contact-form-subject"
                             id="contact-form-subject"
                             placeholder="請輸入主旨"
+                            v-model="db.subject"
                         />
                     </div>
                     <div class="form-item">
@@ -66,12 +69,21 @@
                             name="contact-form-message"
                             id="contact-form-message"
                             placeholder="請輸入訊息內容"
-                            rows="5"
+                            v-model="db.message"
                         ></textarea>
                     </div>
-                    <button class="form-submit-btn">送出訊息</button>
+                    <button
+                        class="form-submit-btn"
+                        @click.prevent="doSubmit"
+                        :disabled="isSending"
+                    >
+                        <span v-show="!isSending">送出訊息</span>
+                        <span v-show="isSending">傳送中</span>
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<!-- 在html元件中使用javaScript標籤會無效 -->

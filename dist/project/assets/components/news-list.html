@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="assets/css/news-list.css" />
+<div class="news-list" id="news-list-app">
+    <div class="container">
+        <div class="news-list-inner">
+            <div class="news-items">
+                <template v-for="item in items" :key="item.id">
+                    <div>
+                        <div class="item-date">{{ item.date }}</div>
+                        <h2 class="item-title">{{ item.title }}</h2>
+                        <p class="item-content">{{ item.content }}</p>
+                        <a href="#" class="item-link">
+                            <span>閱讀更多</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </template>
+            </div>
+            <div class="news-paginator">
+                <a href="" class="page-link"
+                    ><i class="fas fa-angle-left"></i
+                ></a>
+                <a href="#" class="page-link active">1</a
+                ><a href="#" class="page-link">2</a
+                ><a href="#" class="page-link">3</a
+                ><a href="#" class="page-link">4</a>
+                <a href="" class="page-link"
+                    ><i class="fas fa-angle-right"></i
+                ></a>
+            </div>
+        </div>
+    </div>
+</div>

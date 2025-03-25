@@ -1,0 +1,99 @@
+.news-list {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.news-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.news-items > div {
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--background);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-items > div:hover {
+    transform: translateY(-5px);
+}
+
+.news-items .item-date {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.news-items .item-title {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.news-items .item-content {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.news-items .item-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.news-items .item-link:hover {
+    color: #1140af;
+}
+
+.news-items .item-link i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.news-items .item-link:hover i {
+    transform: translateX(5px);
+}
+
+.news-paginator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.news-paginator > .page-link {
+    --r: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--r);
+    height: var(--r);
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    background-color: var(--background);
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.news-paginator > .page-link:hover {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.news-paginator > .page-link.active {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: #fff;
+}

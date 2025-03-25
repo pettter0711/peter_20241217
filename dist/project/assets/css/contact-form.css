@@ -120,3 +120,8 @@
 .contact-form-inner .form-wrap .form-submit-btn:hover {
     background-color: #0056b3;
 }
+
+.contact-form-inner .form-wrap .form-submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
