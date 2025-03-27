@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="assets/css/news-detail-chain.css" />
+<div class="news-detail-chain" id="news-detail-chain-app">
+    <div class="container">
+        <div class="news-detail-chain-inner">
+            <a
+                :href="`/project/news-detail.html?id=${prev.id}`"
+                v-if="prev.id"
+                class="prev"
+            >
+                <div class="chain-nav">上一篇</div>
+                <div class="chain-title">{{ prev.title }}</div>
+            </a>
+            <a
+                :href="`/project/news-detail.html?id=${next.id}`"
+                v-if="next.id"
+                class="next"
+            >
+                <div class="chain-nav">下一篇</div>
+                <div class="chain-title">{{ next.title }}</div>
+            </a>
+        </div>
+    </div>
+</div>

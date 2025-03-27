@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="assets/css/news-detail-body.css" />
+<div class="news-detail-body" id="news-detail-body-app">
+    <div class="container">
+        <div class="news-detail-body-inner">
+            <div class="news-meta">
+                <div class="date">{{ item.date }}</div>
+                <div class="catagory">{{ item.catagory }}</div>
+            </div>
+            <div class="title">{{ item.title }}</div>
+            <div class="content" v-html="item.content"></div>
+        </div>
+    </div>
+</div>

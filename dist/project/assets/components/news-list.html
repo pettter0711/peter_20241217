@@ -3,12 +3,15 @@
     <div class="container">
         <div class="news-list-inner">
             <div class="news-items">
-                <template v-for="item in items" :key="item.id">
+                <template v-for="item in getPage()" :key="item.id">
                     <div>
                         <div class="item-date">{{ item.date }}</div>
                         <h2 class="item-title">{{ item.title }}</h2>
                         <p class="item-content">{{ item.content }}</p>
-                        <a href="#" class="item-link">
+                        <a
+                            :href="`/project/news-detail.html?id=${item.id}`"
+                            class="item-link"
+                        >
                             <span>閱讀更多</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -16,14 +19,18 @@
                 </template>
             </div>
             <div class="news-paginator">
-                <a href="" class="page-link"
+                <a href="#" @click.prevent="toPrev"
                     ><i class="fas fa-angle-left"></i
                 ></a>
-                <a href="#" class="page-link active">1</a
-                ><a href="#" class="page-link">2</a
-                ><a href="#" class="page-link">3</a
-                ><a href="#" class="page-link">4</a>
-                <a href="" class="page-link"
+                <template v-for="i in total" :key="i">
+                    <a
+                        href="#"
+                        :class="{active: page === i}"
+                        @click.prevent="toPage(i)"
+                        >{{ i }}</a
+                    >
+                </template>
+                <a href="#" @click.prevent="toNext"
                     ><i class="fas fa-angle-right"></i
                 ></a>
             </div>

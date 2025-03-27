@@ -20,7 +20,7 @@ const loadFile = async function (selector, filePath) {
         const html = await request.text(); //將fetch接收到的資料，轉成text(純文字檔)
         dom.innerHTML = html;
     } catch (e) {
-        console.eroor(e);
+        console.error(e);
     }
 };
 

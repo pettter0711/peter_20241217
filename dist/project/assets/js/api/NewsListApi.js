@@ -6,7 +6,7 @@ class NewsListApi {
 
             return data ? data : [];
         } catch (e) {
-            console.log(e);
+            return [];
         }
     }
 }

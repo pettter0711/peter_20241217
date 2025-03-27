@@ -71,7 +71,7 @@
     margin-top: 2rem;
 }
 
-.news-paginator > .page-link {
+.news-paginator > a {
     --r: 40px;
     display: flex;
     align-items: center;
@@ -86,13 +86,13 @@
     transition: all 0.3s ease;
 }
 
-.news-paginator > .page-link:hover {
+.news-paginator > a:hover {
     border-color: var(--primary-color);
     background-color: var(--primary-color);
     color: #fff;
 }
 
-.news-paginator > .page-link.active {
+.news-paginator > a.active {
     border-color: var(--primary-color);
     background-color: var(--primary-color);
     color: #fff;
