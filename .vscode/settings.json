@@ -9,7 +9,7 @@
             "savePath": "/dist/css"
         }
     ],
-    "liveServer.settings.root": "/dist"
+    "liveServer.settings.root": "/public"
 }
 
 //越接近專案的設定檔(JSON)，等級越高

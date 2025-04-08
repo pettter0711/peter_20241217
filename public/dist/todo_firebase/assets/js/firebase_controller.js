@@ -1,0 +1,125 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signOut,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import {
+    getDatabase,
+    ref,
+    onValue,
+    get,
+    set,
+    push,
+    update,
+    remove,
+    off,
+} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBX03WDOmeQm5qbA1OkSjl0E0rwSSGhptA",
+    authDomain: "frontend-20241217-504cc.firebaseapp.com",
+    projectId: "frontend-20241217-504cc",
+    storageBucket: "frontend-20241217-504cc.firebasestorage.app",
+    messagingSenderId: "997345439946",
+    appId: "1:997345439946:web:2d23d962be91050eeac433",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const database = getDatabase(app);
+
+/**
+ * 監聽資料
+ * @param {*} node
+ * @param {*} callback
+ * @returns {Function} 取消監聽的函數
+ */
+
+const listen = (node, callback) => {
+    const nodeRef = ref(database, node);
+    onValue(nodeRef, (snapshot) => {
+        callback(snapshot.val(), snapshot);
+    });
+    return () => off(nodeRef);
+};
+
+/**
+ * 讀取節點資料 (要使用get，不是onValue，onValue是監聽)
+ * @param {*} node
+ * @param {*} value
+ */
+
+const getValue = async (node) => {
+    const nodeRef = ref(database, node);
+    const snapshot = await get(nodeRef);
+    return snapshot.val();
+};
+
+// const getValue = (node) => {
+//     return new Promise((resolve, reject) => {
+//         const nodeRef = ref(database, node);
+//         onValue(nodeRef, (snapshot) => {
+//             resolve(snapshot.val());
+//         });
+//     });
+// };
+
+/**
+ * 寫入資料，會強制覆蓋
+ * @param {*} node
+ * @param {*} value
+ */
+const setValue = (node, value) => {
+    const nodeRef = ref(database, node);
+    set(nodeRef, value);
+};
+
+/**
+ * 新增資料，自動產生 key
+ * @param {*} node
+ * @param {*} value
+ */
+const appendValue = (node, value) => {
+    const nodeRef = ref(database, node);
+    const newRef = push(nodeRef); // 產生 key -> node/key
+    set(newRef, value);
+};
+
+/**
+ * 更新資料
+ * @param {*} node
+ * @param {*} object
+ */
+
+const updateValue = (node, object) => {
+    const nodeRef = ref(database, node);
+    update(nodeRef, object);
+};
+
+/**
+ * 刪除資料
+ * @param {*} node
+ */
+
+const removeValue = (node) => {
+    const nodeRef = ref(database, node);
+    remove(nodeRef);
+};
+
+export {
+    auth,
+    database,
+    createUserWithEmailAndPassword,
+    signOut,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    listen,
+    getValue,
+    setValue,
+    appendValue,
+    updateValue,
+    removeValue,
+};
